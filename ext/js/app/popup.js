@@ -16,17 +16,17 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-import {FrameClient} from '../comm/frame-client.js';
-import {DynamicProperty} from '../core/dynamic-property.js';
-import {EventDispatcher} from '../core/event-dispatcher.js';
-import {EventListenerCollection} from '../core/event-listener-collection.js';
-import {ExtensionError} from '../core/extension-error.js';
-import {safePerformance} from '../core/safe-performance.js';
-import {deepEqual} from '../core/utilities.js';
-import {addFullscreenChangeEventListener, computeZoomScale, convertRectZoomCoordinates, getFullscreenElement} from '../dom/document-util.js';
-import {loadStyle} from '../dom/style-util.js';
-import {checkPopupPreviewURL} from '../pages/settings/popup-preview-controller.js';
-import {ThemeController} from './theme-controller.js';
+import { FrameClient } from '../comm/frame-client.js';
+import { DynamicProperty } from '../core/dynamic-property.js';
+import { EventDispatcher } from '../core/event-dispatcher.js';
+import { EventListenerCollection } from '../core/event-listener-collection.js';
+import { ExtensionError } from '../core/extension-error.js';
+import { safePerformance } from '../core/safe-performance.js';
+import { deepEqual } from '../core/utilities.js';
+import { addFullscreenChangeEventListener, computeZoomScale, convertRectZoomCoordinates, getFullscreenElement } from '../dom/document-util.js';
+import { loadStyle } from '../dom/style-util.js';
+import { checkPopupPreviewURL } from '../pages/settings/popup-preview-controller.js';
+import { ThemeController } from './theme-controller.js';
 
 /**
  * This class is the container which hosts the display of search results.
@@ -752,6 +752,11 @@ export class Popup extends EventDispatcher {
         this._visibleValue = value;
         this._frame.style.setProperty('visibility', value ? 'visible' : 'hidden', 'important');
         void this._invokeSafe('displayVisibilityChanged', {value});
+        if (value) {
+            window.dispatchEvent(new CustomEvent('yomitan-popup-shown'));
+        } else {
+            window.dispatchEvent(new CustomEvent('yomitan-popup-hidden'));
+        }
     }
 
     /**

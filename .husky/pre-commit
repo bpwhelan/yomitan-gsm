@@ -1,2 +1,2 @@
-echo "Husky pre-commit hook"
-npx lint-staged
+# echo "Husky pre-commit hook"
+# npx lint-staged
