@@ -747,7 +747,7 @@
                                     },
                                     "selectText": {
                                         "type": "boolean",
-                                        "default": true
+                                        "default": false
                                     },
                                     "alphanumeric": {
                                         "type": "boolean",
@@ -799,7 +799,7 @@
                                     },
                                     "layoutAwareScan": {
                                         "type": "boolean",
-                                        "default": true
+                                        "default": false
                                     },
                                     "matchTypePrefix": {
                                         "type": "boolean",
