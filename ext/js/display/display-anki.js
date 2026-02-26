@@ -16,17 +16,17 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-import { EventListenerCollection } from '../core/event-listener-collection.js';
-import { ExtensionError } from '../core/extension-error.js';
-import { log } from '../core/log.js';
-import { toError } from '../core/to-error.js';
-import { deferPromise } from '../core/utilities.js';
-import { AnkiNoteBuilder } from '../data/anki-note-builder.js';
-import { getDynamicTemplates } from '../data/anki-template-util.js';
-import { INVALID_NOTE_ID, isNoteDataValid } from '../data/anki-util.js';
-import { PopupMenu } from '../dom/popup-menu.js';
-import { querySelectorNotNull } from '../dom/query-selector.js';
-import { TemplateRendererProxy } from '../templates/template-renderer-proxy.js';
+import {EventListenerCollection} from '../core/event-listener-collection.js';
+import {ExtensionError} from '../core/extension-error.js';
+import {log} from '../core/log.js';
+import {toError} from '../core/to-error.js';
+import {deferPromise} from '../core/utilities.js';
+import {AnkiNoteBuilder} from '../data/anki-note-builder.js';
+import {getDynamicTemplates} from '../data/anki-template-util.js';
+import {INVALID_NOTE_ID, isNoteDataValid} from '../data/anki-util.js';
+import {PopupMenu} from '../dom/popup-menu.js';
+import {querySelectorNotNull} from '../dom/query-selector.js';
+import {TemplateRendererProxy} from '../templates/template-renderer-proxy.js';
 
 export class DisplayAnki {
     /**
@@ -114,6 +114,12 @@ export class DisplayAnki {
         this._onViewNotesButtonMenuCloseBind = this._onViewNotesButtonMenuClose.bind(this);
         /** @type {boolean} */
         this._forceSync = false;
+        /** @type {number} */
+        this._gsmSelectedActionButtonIndex = -1;
+        /** @type {string} */
+        this._gsmControllerSelectionClass = 'gsm-controller-selected-action';
+        /** @type {(event: MessageEvent) => void} */
+        this._onGsmPostMessageBind = this._onGsmPostMessage.bind(this);
     }
 
     /** */
@@ -130,6 +136,16 @@ export class DisplayAnki {
         this._display.on('contentUpdateStart', this._onContentUpdateStart.bind(this));
         this._display.on('contentUpdateComplete', this._onContentUpdateComplete.bind(this));
         this._display.on('logDictionaryEntryData', this._onLogDictionaryEntryData.bind(this));
+
+        // GSM Overlay integration (mining trigger + popup controller actions)
+
+        window.gsmTriggerAnkiAdd = (cardFormatIndex = 0) => {
+            console.log('[Yomitan] gsmTriggerAnkiAdd called', cardFormatIndex);
+            this._triggerGsmMining(cardFormatIndex);
+        };
+        window.addEventListener('message', this._onGsmPostMessageBind);
+
+        console.log('[Yomitan] GSM controller listeners registered (mining + popup controls)');
     }
 
     /**
@@ -189,6 +205,215 @@ export class DisplayAnki {
     // Private
 
     /**
+     * @param {unknown} cardFormatIndex
+     */
+    _triggerGsmMining(cardFormatIndex) {
+        try {
+            this._hotkeySaveAnkiNoteForSelectedEntry(String(cardFormatIndex ?? 0));
+        } catch (e) {
+            console.log('[Yomitan] gsm-trigger-anki-add handler error:', e);
+        }
+    }
+
+    /**
+     * @param {MessageEvent} event
+     */
+    _onGsmPostMessage(event) {
+        try {
+            const data = event?.data;
+            if (typeof data !== 'object' || data === null) { return; }
+
+            if (data.type === 'gsm-trigger-anki-add') {
+                const idx = data.cardFormatIndex ?? 0;
+                console.log('[Yomitan] postMessage gsm-trigger-anki-add received', idx);
+                this._triggerGsmMining(idx);
+                return;
+            }
+
+            if (data.type !== 'gsm-yomitan-control') { return; }
+            this._handleGsmYomitanControl(data);
+        } catch (e) {
+            console.log('[Yomitan] postMessage handler error:', e);
+        }
+    }
+
+    /**
+     * @param {{action?: string, direction?: number, step?: number}} data
+     */
+    _handleGsmYomitanControl(data) {
+        const action = data.action;
+        switch (action) {
+            case 'scroll':
+                this._scrollGsmPopupContent(data.direction, data.step);
+                break;
+            case 'select-action':
+                this._shiftGsmActionSelection(Number(data.direction) >= 0 ? 1 : -1);
+                break;
+            case 'reset-action-selection':
+                this._resetGsmActionSelection();
+                break;
+            case 'confirm-action':
+                this._activateGsmSelectedAction();
+                break;
+            case 'clear-action-selection':
+                this._clearGsmActionSelection();
+                break;
+            default:
+                break;
+        }
+    }
+
+    /**
+     *
+     */
+    _ensureGsmControllerStyle() {
+        if (document.querySelector('#gsm-controller-style') !== null) { return; }
+        const style = document.createElement('style');
+        style.id = 'gsm-controller-style';
+        style.textContent = `
+            .${this._gsmControllerSelectionClass} {
+                outline: 2px solid rgba(0, 255, 168, 0.95) !important;
+                outline-offset: 2px !important;
+                box-shadow: 0 0 0 2px rgba(0, 255, 168, 0.35) !important;
+            }
+        `;
+        document.head.append(style);
+    }
+
+    /**
+     * @param {Element} node
+     * @returns {boolean}
+     */
+    _isGsmNodeVisible(node) {
+        if (!(node instanceof HTMLElement)) { return false; }
+        if (node.hidden || node.disabled) { return false; }
+        if (node.getClientRects().length === 0) { return false; }
+        const style = window.getComputedStyle(node);
+        return style.display !== 'none' && style.visibility !== 'hidden';
+    }
+
+    /**
+     * @returns {HTMLElement[]}
+     */
+    _getGsmActionButtons() {
+        /** @type {HTMLElement[]} */
+        const buttons = [];
+        const currentEntry = document.querySelector('.entry-current');
+        if (currentEntry !== null) {
+            buttons.push(...currentEntry.querySelectorAll('.action-button'));
+        } else {
+            buttons.push(...document.querySelectorAll('.entry .action-button'));
+        }
+        buttons.push(...document.querySelectorAll('#popup-menus .popup-menu-item'));
+
+        const uniqueButtons = [...new Set(buttons)]
+            .filter((node) => this._isGsmNodeVisible(node));
+
+        uniqueButtons.sort((a, b) => {
+            const ar = a.getBoundingClientRect();
+            const br = b.getBoundingClientRect();
+            if (Math.abs(ar.top - br.top) > 4) {
+                return ar.top - br.top;
+            }
+            return ar.left - br.left;
+        });
+
+        return uniqueButtons;
+    }
+
+    /**
+     *
+     */
+    _clearGsmActionSelection() {
+        const nodes = document.querySelectorAll(`.${this._gsmControllerSelectionClass}`);
+        for (const node of nodes) {
+            node.classList.remove(this._gsmControllerSelectionClass);
+        }
+        this._gsmSelectedActionButtonIndex = -1;
+    }
+
+    /**
+     * @param {HTMLElement} button
+     * @param {number} index
+     */
+    _setGsmSelectedActionButton(button, index) {
+        this._ensureGsmControllerStyle();
+        this._clearGsmActionSelection();
+        button.classList.add(this._gsmControllerSelectionClass);
+        this._gsmSelectedActionButtonIndex = index;
+        button.scrollIntoView({block: 'nearest', inline: 'nearest'});
+    }
+
+    /**
+     *
+     */
+    _resetGsmActionSelection() {
+        const buttons = this._getGsmActionButtons();
+        if (buttons.length === 0) {
+            this._clearGsmActionSelection();
+            return false;
+        }
+        this._setGsmSelectedActionButton(buttons[0], 0);
+        return true;
+    }
+
+    /**
+     * @param {number} direction
+     * @returns {boolean}
+     */
+    _shiftGsmActionSelection(direction) {
+        const buttons = this._getGsmActionButtons();
+        if (buttons.length === 0) {
+            this._clearGsmActionSelection();
+            return false;
+        }
+
+        let index = this._gsmSelectedActionButtonIndex;
+        index = index < 0 || index >= buttons.length ? 0 : (index + direction + buttons.length) % buttons.length;
+
+        this._setGsmSelectedActionButton(buttons[index], index);
+        return true;
+    }
+
+    /**
+     *
+     */
+    _activateGsmSelectedAction() {
+        const buttons = this._getGsmActionButtons();
+        if (buttons.length === 0) {
+            this._clearGsmActionSelection();
+            return false;
+        }
+
+        let index = this._gsmSelectedActionButtonIndex;
+        if (index < 0 || index >= buttons.length) {
+            index = 0;
+        }
+        const button = buttons[index];
+        this._setGsmSelectedActionButton(button, index);
+
+        const clickEvent = new MouseEvent('click', {
+            bubbles: true,
+            cancelable: true,
+            view: window,
+        });
+        button.dispatchEvent(clickEvent);
+        return true;
+    }
+
+    /**
+     * @param {number|undefined} direction
+     * @param {number|undefined} step
+     */
+    _scrollGsmPopupContent(direction, step) {
+        const contentScroll = document.querySelector('#content-scroll');
+        if (!(contentScroll instanceof HTMLElement)) { return; }
+        const safeDirection = Number(direction) >= 0 ? 1 : -1;
+        const safeStep = Math.max(30, Math.min(500, Number(step) || 110));
+        contentScroll.scrollBy({top: safeDirection * safeStep, behavior: 'auto'});
+    }
+
+    /**
      * @param {import('display').EventArgument<'optionsUpdated'>} details
      */
     _onOptionsUpdated({options}) {
@@ -246,6 +471,7 @@ export class DisplayAnki {
         this._dictionaryEntryDetails = null;
         this._hideErrorNotification(false);
         this._eventListeners.removeAllEventListeners();
+        this._clearGsmActionSelection();
     }
 
     /** */
@@ -311,6 +537,12 @@ export class DisplayAnki {
 
         const container = entry.querySelector('.note-actions-container');
         if (container === null) { return null; }
+        const dupElements = container.getElementsByClassName('duplicate-indicator');
+        if (dupElements.length > 0) {
+            for (const elem of dupElements) {
+                elem.remove();
+            }
+        }
 
         // Create button from template
         const singleNoteActionButtons = /** @type {HTMLElement} */ (this._display.displayGenerator.instantiateTemplate('action-button-container'));
@@ -340,6 +572,108 @@ export class DisplayAnki {
         container.appendChild(singleNoteActionButtons);
 
         return saveButton;
+    }
+
+    /**
+     * Checks if Anki has existing notes of the dictionary entries being displayed using
+     * notes with only the first note field rendered. Displays whether they are duplicates
+     * or not in the pop up while the actual anki cards are being created.
+     * @param {import('dictionary').DictionaryEntry[]} dictionaryEntries
+     */
+    async _quickDupeCheck(dictionaryEntries) {
+        const len = dictionaryEntries.length;
+        const empty = /** @type {import('dictionary').DictionaryEntry} */ ({});
+        const context = this._noteContext;
+        if (context === null) { throw new Error('Note context not initialized'); }
+        if (!this._ankiFieldTemplates) {
+            const options = this._display.getOptions();
+            if (options) {
+                await this._updateAnkiFieldTemplates(options);
+            }
+        }
+        const template = this._ankiFieldTemplates;
+        if (typeof template !== 'string') { throw new Error('Invalid template'); }
+        const skeletonNoteTemplates = [];
+        for (const cardFormat of this._cardFormats.values()) {
+            skeletonNoteTemplates.push(await this._ankiNoteBuilder.createNote(
+                {dictionaryEntry: empty,
+                    cardFormat: cardFormat,
+                    template: template,
+                    duplicateScope: this._duplicateScope,
+                    duplicateScopeCheckAllModels: this._duplicateScopeCheckAllModels,
+                    context: context,
+                    tags: [],
+                    requirements: [],
+                    resultOutputMode: 'split',
+                    glossaryLayoutMode: 'default',
+                    compactTags: false,
+                    mediaOptions: null,
+                    dictionaryStylesMap: new Map()},
+            ));
+        }
+        const notesToCheck = [];
+        const noteTargets = [];
+        for (let i = 0, ii = len; i < ii; ++i) {
+            const {type} = dictionaryEntries[i];
+            for (const [cardFormatIndex, cardFormat] of this._cardFormats.entries()) {
+                if (cardFormat.type !== type) { continue; }
+                const skeletonNoteCardCopy = structuredClone(skeletonNoteTemplates[cardFormatIndex]);
+                const details = this._ankiNoteBuilder.getDictionaryEntryDetailsForNote(dictionaryEntries[i]);
+                const firstFieldName = Object.keys(skeletonNoteCardCopy.note.fields)[0];
+                skeletonNoteCardCopy.note.deckName = cardFormat.deck;
+                skeletonNoteCardCopy.note.modelName = cardFormat.model;
+                const fieldValue = details.type === 'kanji' ? details.character : details.term;
+                skeletonNoteCardCopy.note.fields[firstFieldName] = fieldValue;
+                notesToCheck.push(skeletonNoteCardCopy);
+                noteTargets.push({index: i, cardFormatIndex, cardFormat});
+            }
+        }
+        const infos = await this._display.application.api.getAnkiNoteInfo(notesToCheck.map((note) => note.note), this._isAdditionalInfoEnabled());
+        /** @type {import('display-anki').DictionaryEntryDetails[]} */
+        const results = new Array(dictionaryEntries.length).fill(null).map(() => ({noteMap: new Map()}));
+        const ankiError = null;
+        for (let i = 0, ii = notesToCheck.length; i < ii; ++i) {
+            const {note, errors, requirements} = notesToCheck[i];
+            const {canAdd, valid, noteIds, noteInfos} = infos[i];
+            const {cardFormatIndex, cardFormat, index} = noteTargets[i];
+            results[index].noteMap.set(cardFormatIndex, {cardFormat, note, errors, requirements, canAdd, valid, noteIds, noteInfos, ankiError});
+        }
+        this._displayWhetherDupeOrNotAndLoading(results);
+        // eslint-disable-next-line no-underscore-dangle
+        this._display._hotkeyHelpController.setupNode(document.documentElement);
+    }
+
+    /**
+     * Where the add buttons and view note buttons are, put temporary indicators showing if there
+     * is already an Anki note for the term or not
+     * @param {import('display-anki').DictionaryEntryDetails[]} dictionaryEntryDetails
+     */
+    _displayWhetherDupeOrNotAndLoading(dictionaryEntryDetails) {
+        const displayTagsAndFlags = this._displayTagsAndFlags;
+        for (let entryIndex = 0, entryCount = dictionaryEntryDetails.length; entryIndex < entryCount; ++entryIndex) {
+            for (const [cardFormatIndex, {noteIds, noteInfos}] of dictionaryEntryDetails[entryIndex].noteMap.entries()) {
+                const entry = this._getEntry(entryIndex);
+                if (entry === null) { return; }
+                const container = entry.querySelector('.note-actions-container');
+                if (container === null) { return; }
+                // If entry has noteIds, show the "add duplicate" button.
+                if (Array.isArray(noteIds) && noteIds.length > 0) {
+                    const text = document.createElement('p');
+                    text.className = 'duplicate-indicator';
+                    text.textContent = ' DUPLICATE ';
+                    container.appendChild(text);
+                } else {
+                    const text = document.createElement('p');
+                    text.className = 'duplicate-indicator';
+                    text.textContent = ' NOT A DUPLICATE ';
+                    container.appendChild(text);
+                }
+                if (displayTagsAndFlags !== 'never' && Array.isArray(noteInfos)) {
+                    this._setupTagsIndicator(entryIndex, cardFormatIndex, noteInfos);
+                    this._setupFlagsIndicator(entryIndex, cardFormatIndex, noteInfos);
+                }
+            }
+        }
     }
 
 
@@ -393,6 +727,9 @@ export class DisplayAnki {
         const {promise, resolve} = /** @type {import('core').DeferredPromiseDetails<void>} */ (deferPromise());
         try {
             this._updateSaveButtonsPromise = promise;
+            // if (this._checkForDuplicates === true) {
+            //     await this._quickDupeCheck(dictionaryEntries);
+            // }
             const dictionaryEntryDetails = await this._getDictionaryEntryDetails(dictionaryEntries);
             if (this._updateDictionaryEntryDetailsToken !== token) { return; }
             this._dictionaryEntryDetails = dictionaryEntryDetails;
@@ -678,6 +1015,13 @@ export class DisplayAnki {
             this._showErrorNotification(allErrors);
         } else {
             this._hideErrorNotification(true);
+
+            // Signal overlay that mining occurred
+            try {
+                window.dispatchEvent(new CustomEvent('gsm-anki-note-added'));
+            } catch (e) {
+                // ignore
+            }
         }
     }
 
