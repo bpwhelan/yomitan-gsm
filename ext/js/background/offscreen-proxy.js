@@ -59,6 +59,8 @@ export class OffscreenProxy {
         this._webExtension = webExtension;
         /** @type {?Promise<void>} */
         this._creatingOffscreen = null;
+        /** @type {?Promise<void>} */
+        this._preparingOffscreen = null;
 
         /** @type {?MessagePort} */
         this._currentOffscreenPort = null;
@@ -68,12 +70,29 @@ export class OffscreenProxy {
      * @see https://developer.chrome.com/docs/extensions/reference/offscreen/
      */
     async prepare() {
+        if (this._preparingOffscreen !== null) {
+            await this._preparingOffscreen;
+            return;
+        }
+        this._preparingOffscreen = this._prepareInternal();
+        try {
+            await this._preparingOffscreen;
+        } finally {
+            this._preparingOffscreen = null;
+        }
+    }
+
+    /**
+     * @returns {Promise<void>}
+     */
+    async _prepareInternal() {
         if (await this._hasOffscreenDocument()) {
-            void this.sendMessagePromise({action: 'createAndRegisterPortOffscreen'});
+            await this._warmOffscreenLookupState();
             return;
         }
         if (this._creatingOffscreen) {
             await this._creatingOffscreen;
+            await this._warmOffscreenLookupState();
             return;
         }
 
@@ -84,8 +103,21 @@ export class OffscreenProxy {
             ],
             justification: 'Access to the clipboard',
         });
-        await this._creatingOffscreen;
-        this._creatingOffscreen = null;
+        try {
+            await this._creatingOffscreen;
+        } finally {
+            this._creatingOffscreen = null;
+        }
+        await this._warmOffscreenLookupState();
+    }
+
+    /**
+     * @returns {Promise<void>}
+     */
+    async _warmOffscreenLookupState() {
+        await this.sendMessagePromise({action: 'createAndRegisterPortOffscreen'});
+        await this.sendMessagePromise({action: 'databasePrepareOffscreen'});
+        await this.sendMessagePromise({action: 'translatorPrepareOffscreen'});
     }
 
     /**
@@ -162,7 +194,7 @@ export class OffscreenProxy {
         if (this._currentOffscreenPort !== null) {
             this._currentOffscreenPort.postMessage(message, transfers);
         } else {
-            void this.sendMessagePromise({action: 'createAndRegisterPortOffscreen'});
+            void this.prepare();
         }
     }
 }

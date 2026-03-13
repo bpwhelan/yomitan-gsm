@@ -329,13 +329,15 @@ export class Backend {
                 sharedWorkerBridge.port.addEventListener('messageerror', this._onPmMessageError.bind(this));
                 sharedWorkerBridge.port.start();
             }
-            try {
-                await this._dictionaryDatabase.prepare();
-            } catch (e) {
-                log.error(e);
-            }
+            if (this._offscreen === null) {
+                try {
+                    await this._dictionaryDatabase.prepare();
+                } catch (e) {
+                    log.error(e);
+                }
 
-            void this._translator.prepare();
+                void this._translator.prepare();
+            }
 
             await this._optionsUtil.prepare();
             this._defaultAnkiFieldTemplates = (await fetchText('/data/templates/default-anki-field-templates.handlebars')).trim();

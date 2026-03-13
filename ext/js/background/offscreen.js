@@ -80,6 +80,8 @@ export class Offscreen {
 
         /** @type {?Promise<void>} */
         this._prepareDatabasePromise = null;
+        /** @type {?Promise<void>} */
+        this._prepareLookupStatePromise = null;
 
         /**
          * @type {API}
@@ -92,6 +94,7 @@ export class Offscreen {
         chrome.runtime.onMessage.addListener(this._onMessage.bind(this));
         navigator.serviceWorker.addEventListener('controllerchange', this._createAndRegisterPort.bind(this));
         this._createAndRegisterPort();
+        void this._prepareLookupState();
     }
 
     /** @type {import('offscreen').ApiHandler<'clipboardGetTextOffscreen'>} */
@@ -116,6 +119,20 @@ export class Offscreen {
         }
         this._prepareDatabasePromise = this._dictionaryDatabase.prepare();
         return this._prepareDatabasePromise;
+    }
+
+    /**
+     * @returns {Promise<void>}
+     */
+    _prepareLookupState() {
+        if (this._prepareLookupStatePromise !== null) {
+            return this._prepareLookupStatePromise;
+        }
+        this._prepareLookupStatePromise = this._prepareDatabaseHandler()
+            .then(() => {
+                this._translator.prepare();
+            });
+        return this._prepareLookupStatePromise;
     }
 
     /** @type {import('offscreen').ApiHandler<'getDictionaryInfoOffscreen'>} */
@@ -177,7 +194,7 @@ export class Offscreen {
 
     /** @type {import('offscreen').ApiHandler<'translatorPrepareOffscreen'>} */
     _prepareTranslatorHandler() {
-        this._translator.prepare();
+        return this._prepareLookupState();
     }
 
     /** @type {import('offscreen').ApiHandler<'findKanjiOffscreen'>} */
