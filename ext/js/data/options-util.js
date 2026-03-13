@@ -587,6 +587,7 @@ export class OptionsUtil {
             this._updateVersion73,
             this._updateVersion74,
             this._updateVersion75,
+            this._updateVersion76,
         ];
         /* eslint-enable @typescript-eslint/unbound-method */
         if (typeof targetVersion === 'number' && targetVersion < result.length) {
@@ -603,6 +604,7 @@ export class OptionsUtil {
         options.global = {
             database: {
                 prefixWildcardsSupported: false,
+                autoUpdateDictionariesOnStartup: false,
             },
         };
     }
@@ -1842,6 +1844,14 @@ export class OptionsUtil {
             general.useSecurePopupFrameUrl = false;
             general.usePopupShadowDom = false;
         }
+    }
+
+    /**
+     *  - Added global.database.autoUpdateDictionariesOnStartup
+     *  @type {import('options-util').UpdateFunction}
+     */
+    async _updateVersion76(options) {
+        options.global.database.autoUpdateDictionariesOnStartup = false;
     }
 
     /**
