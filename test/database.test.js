@@ -918,6 +918,43 @@ describe('Database', () => {
             }
         });
 
+        test('Lean term lookups defer glossary hydration until explicitly requested', async ({expect}) => {
+            const testDictionarySource = await createTestDictionaryArtifactArchiveData('valid-dictionary1', 'Artifact Raw V4 Deferred Dictionary', 'raw-v4');
+            const dictionaryDatabase = new DictionaryDatabase();
+            await dictionaryDatabase.prepare();
+            try {
+                const dictionaryImporter = createDictionaryImporter(expect);
+                const {errors} = await dictionaryImporter.importDictionary(
+                    dictionaryDatabase,
+                    testDictionarySource,
+                    {prefixWildcardsSupported: true, yomitanVersion: '0.0.0.0'},
+                );
+                expect.soft(errors).toStrictEqual([]);
+
+                const titles = new Map([
+                    ['Artifact Raw V4 Deferred Dictionary', {alias: 'Artifact Raw V4 Deferred Dictionary', allowSecondarySearches: false}],
+                ]);
+                const hydrateSpy = vi.spyOn(dictionaryDatabase, '_loadTermEntryGlossary');
+                const results = await dictionaryDatabase.findTermsBulkLean(['打'], titles, 'exact');
+                expect.soft(results.length).toBeGreaterThan(0);
+                expect.soft(results[0]?.definitions).toStrictEqual([]);
+                expect.soft(hydrateSpy).not.toHaveBeenCalled();
+
+                const hydratedResults = await dictionaryDatabase.findTermsBulk(['打'], titles, 'exact');
+                const expectedDefinitions = new Map(hydratedResults.map(({id, definitions}) => [id, definitions]));
+                hydrateSpy.mockClear();
+
+                await dictionaryDatabase.hydrateTermEntriesGlossary([results[0]]);
+                expect.soft(hydrateSpy).toHaveBeenCalledTimes(1);
+                expect.soft(results[0]?.definitions).toStrictEqual(expectedDefinitions.get(results[0]?.id ?? -1) ?? []);
+                if (results.length > 1) {
+                    expect.soft(results[1]?.definitions).toStrictEqual([]);
+                }
+            } finally {
+                await dictionaryDatabase.close();
+            }
+        });
+
         test('Import data and test', async ({expect}) => {
             const fakeImportDate = testData.expectedSummary.importDate;
 
