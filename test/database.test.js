@@ -955,6 +955,101 @@ describe('Database', () => {
             }
         });
 
+        test('Exact pair negative cache skips repeated miss lookups', async ({expect}) => {
+            const testDictionarySource = await createTestDictionaryArchiveData('valid-dictionary1');
+            const testDictionaryIndex = await getDictionaryArchiveIndex(testDictionarySource);
+            const dictionaryDatabase = new DictionaryDatabase();
+            await dictionaryDatabase.prepare();
+            try {
+                const dictionaryImporter = createDictionaryImporter(expect);
+                await dictionaryImporter.importDictionary(
+                    dictionaryDatabase,
+                    testDictionarySource,
+                    {prefixWildcardsSupported: true, yomitanVersion: '0.0.0.0'},
+                );
+
+                const titles = new Map([
+                    [testDictionaryIndex.title, {alias: testDictionaryIndex.title, allowSecondarySearches: false}],
+                ]);
+                const directIndexSpy = vi.spyOn(dictionaryDatabase, '_ensureDirectTermIndex');
+
+                const firstResults = await dictionaryDatabase.findTermsExactBulkLean([{term: '__missing_term__', reading: '__missing_reading__'}], titles);
+                expect.soft(firstResults).toStrictEqual([]);
+                expect.soft(directIndexSpy).toHaveBeenCalledTimes(1);
+
+                directIndexSpy.mockClear();
+                const secondResults = await dictionaryDatabase.findTermsExactBulkLean([{term: '__missing_term__', reading: '__missing_reading__'}], titles);
+                expect.soft(secondResults).toStrictEqual([]);
+                expect.soft(directIndexSpy).not.toHaveBeenCalled();
+            } finally {
+                await dictionaryDatabase.close();
+            }
+        });
+
+        test('Sequence negative cache skips repeated miss lookups', async ({expect}) => {
+            const testDictionarySource = await createTestDictionaryArchiveData('valid-dictionary1');
+            const testDictionaryIndex = await getDictionaryArchiveIndex(testDictionarySource);
+            const dictionaryDatabase = new DictionaryDatabase();
+            await dictionaryDatabase.prepare();
+            try {
+                const dictionaryImporter = createDictionaryImporter(expect);
+                await dictionaryImporter.importDictionary(
+                    dictionaryDatabase,
+                    testDictionarySource,
+                    {prefixWildcardsSupported: true, yomitanVersion: '0.0.0.0'},
+                );
+
+                const directIndexSpy = vi.spyOn(dictionaryDatabase, '_ensureDirectTermIndex');
+
+                const firstResults = await dictionaryDatabase.findTermsBySequenceBulkLean([{query: 999999, dictionary: testDictionaryIndex.title}]);
+                expect.soft(firstResults).toStrictEqual([]);
+                expect.soft(directIndexSpy).toHaveBeenCalledTimes(1);
+
+                directIndexSpy.mockClear();
+                const secondResults = await dictionaryDatabase.findTermsBySequenceBulkLean([{query: 999999, dictionary: testDictionaryIndex.title}]);
+                expect.soft(secondResults).toStrictEqual([]);
+                expect.soft(directIndexSpy).not.toHaveBeenCalled();
+            } finally {
+                await dictionaryDatabase.close();
+            }
+        });
+
+        test('Glossary cache reuses decoded payloads across lean hydrations', async ({expect}) => {
+            const testDictionarySource = await createTestDictionaryArtifactArchiveData('valid-dictionary1', 'Artifact Raw V4 Cached Dictionary', 'raw-v4');
+            const dictionaryDatabase = new DictionaryDatabase();
+            await dictionaryDatabase.prepare();
+            try {
+                const dictionaryImporter = createDictionaryImporter(expect);
+                const {errors} = await dictionaryImporter.importDictionary(
+                    dictionaryDatabase,
+                    testDictionarySource,
+                    {prefixWildcardsSupported: true, yomitanVersion: '0.0.0.0'},
+                );
+                expect.soft(errors).toStrictEqual([]);
+
+                const titles = new Map([
+                    ['Artifact Raw V4 Cached Dictionary', {alias: 'Artifact Raw V4 Cached Dictionary', allowSecondarySearches: false}],
+                ]);
+                const termContentStore = Reflect.get(dictionaryDatabase, '_termContentStore');
+                const termContentReadSpy = vi.spyOn(termContentStore, 'readSlice');
+
+                const firstResults = await dictionaryDatabase.findTermsBulkLean(['打'], titles, 'exact');
+                const readCountAfterFirstLean = termContentReadSpy.mock.calls.length;
+                await dictionaryDatabase.hydrateTermEntriesGlossary([firstResults[0]]);
+                expect.soft(termContentReadSpy.mock.calls.length).toBeGreaterThan(readCountAfterFirstLean);
+                const readCountAfterFirstHydrate = termContentReadSpy.mock.calls.length;
+
+                const secondResults = await dictionaryDatabase.findTermsBulkLean(['打'], titles, 'exact');
+                const readCountAfterSecondLean = termContentReadSpy.mock.calls.length;
+                await dictionaryDatabase.hydrateTermEntriesGlossary([secondResults[0]]);
+                expect.soft(termContentReadSpy.mock.calls.length).toBe(readCountAfterSecondLean);
+                expect.soft(readCountAfterSecondLean).toBeGreaterThanOrEqual(readCountAfterFirstHydrate);
+                expect.soft(secondResults[0]?.definitions).toStrictEqual(firstResults[0]?.definitions);
+            } finally {
+                await dictionaryDatabase.close();
+            }
+        });
+
         test('Import data and test', async ({expect}) => {
             const fakeImportDate = testData.expectedSummary.importDate;
 

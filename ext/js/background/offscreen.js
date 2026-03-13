@@ -128,7 +128,7 @@ export class Offscreen {
         if (this._prepareLookupStatePromise !== null) {
             return this._prepareLookupStatePromise;
         }
-        this._prepareLookupStatePromise = this._prepareDatabaseHandler()
+        this._prepareLookupStatePromise = Promise.resolve(this._prepareDatabaseHandler())
             .then(() => {
                 this._translator.prepare();
             });

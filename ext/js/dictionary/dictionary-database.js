@@ -57,6 +57,7 @@ import {TermRecordOpfsStore} from './term-record-opfs-store.js';
 
 const CURRENT_DICTIONARY_SCHEMA_VERSION = 4;
 const TERM_ENTRY_CONTENT_CACHE_MAX_ENTRIES = 4096;
+const TERM_GLOSSARY_CACHE_MAX_ENTRIES = 4096;
 const DEFAULT_STATEMENT_CACHE_MAX_ENTRIES = 256;
 const LOW_MEMORY_STATEMENT_CACHE_MAX_ENTRIES = 128;
 const DEFAULT_TERM_EXACT_PRESENCE_CACHE_MAX_ENTRIES = 25000;
@@ -176,12 +177,16 @@ export class DictionaryDatabase {
         this._statementCacheMaxEntries = this._computeStatementCacheMaxEntries();
         /** @type {Map<string, {definitionTags: string|null, termTags: string|undefined, rules: string, glossaryJson?: string, glossary?: import('dictionary-data').TermGlossary[]}>} */
         this._termEntryContentCache = new Map();
+        /** @type {Map<string, import('dictionary-data').TermGlossary[]>} */
+        this._termGlossaryCache = new Map();
         /** @type {Map<string, {contentOffset: number, contentLength: number, contentDictName: string, uncompressedLength: number}>} */
         this._sharedGlossaryArtifactMetaByDictionary = new Map();
         /** @type {Map<string, Uint8Array>} */
         this._sharedGlossaryArtifactInflatedByDictionary = new Map();
         /** @type {number} */
         this._termEntryContentCacheMaxEntries = TERM_ENTRY_CONTENT_CACHE_MAX_ENTRIES;
+        /** @type {number} */
+        this._termGlossaryCacheMaxEntries = TERM_GLOSSARY_CACHE_MAX_ENTRIES;
         /** @type {TextEncoder} */
         this._textEncoder = new TextEncoder();
         /** @type {TextDecoder} */
@@ -194,6 +199,14 @@ export class DictionaryDatabase {
         this._termExactPresenceCache = new Map();
         /** @type {number} */
         this._termExactPresenceCacheMaxEntries = this._computeTermExactPresenceCacheMaxEntries();
+        /** @type {Map<string, boolean>} */
+        this._termExactPairPresenceCache = new Map();
+        /** @type {number} */
+        this._termExactPairPresenceCacheMaxEntries = this._computeTermExactPresenceCacheMaxEntries();
+        /** @type {Map<string, boolean>} */
+        this._termSequencePresenceCache = new Map();
+        /** @type {number} */
+        this._termSequencePresenceCacheMaxEntries = this._computeTermExactPresenceCacheMaxEntries();
         /** @type {Map<string, boolean>} */
         this._termPrefixNegativeCache = new Map();
         /** @type {number|null} */
@@ -312,10 +325,8 @@ export class DictionaryDatabase {
             this._bulkImportTransactionOpen = false;
         }
         this._clearCachedStatements();
-        this._termEntryContentCache.clear();
+        this._clearTermLookupCaches();
         this._termEntryContentIdByHash.clear();
-        this._termExactPresenceCache.clear();
-        this._termPrefixNegativeCache.clear();
         this._invalidateMaxHeadwordLengthCache();
         this._directTermIndexByDictionary.clear();
         this._clearTermsVtabCursorState();
@@ -402,9 +413,7 @@ export class DictionaryDatabase {
             this._termEntryContentIdByKey.clear();
             this._termEntryContentIdByHash.clear();
             this._clearTermEntryContentMetaCaches();
-            this._termEntryContentCache.clear();
-            this._termExactPresenceCache.clear();
-            this._termPrefixNegativeCache.clear();
+            this._clearTermLookupCaches();
             this._directTermIndexByDictionary.clear();
             await this._beginImmediateTransaction(db);
             this._bulkImportTransactionOpen = true;
@@ -514,9 +523,7 @@ export class DictionaryDatabase {
                 this._termEntryContentIdByKey.clear();
                 this._termEntryContentIdByHash.clear();
                 this._clearTermEntryContentMetaCaches();
-                this._termEntryContentCache.clear();
-                this._termExactPresenceCache.clear();
-                this._termPrefixNegativeCache.clear();
+                this._clearTermLookupCaches();
                 this._directTermIndexByDictionary.clear();
                 cacheResetMs = safePerformance.now() - tCacheResetStart;
                 this._deferTermsVirtualTableSync = false;
@@ -665,11 +672,9 @@ export class DictionaryDatabase {
         }
 
         await this.prepare();
-        this._termEntryContentCache.clear();
+        this._clearTermLookupCaches();
         this._termEntryContentIdByHash.clear();
         this._clearTermEntryContentMetaCaches();
-        this._termExactPresenceCache.clear();
-        this._termPrefixNegativeCache.clear();
         this._directTermIndexByDictionary.clear();
         return result;
     }
@@ -1058,11 +1063,9 @@ export class DictionaryDatabase {
         this._sqlite3 = sqlite3;
         await this._openConnection();
         this._invalidateMaxHeadwordLengthCache();
-        this._termEntryContentCache.clear();
+        this._clearTermLookupCaches();
         this._termEntryContentIdByHash.clear();
         this._clearTermEntryContentMetaCaches();
-        this._termExactPresenceCache.clear();
-        this._termPrefixNegativeCache.clear();
         this._directTermIndexByDictionary.clear();
     }
 
@@ -1134,11 +1137,9 @@ export class DictionaryDatabase {
 
         onProgress(progressData);
         this._invalidateMaxHeadwordLengthCache();
-        this._termEntryContentCache.clear();
+        this._clearTermLookupCaches();
         this._termEntryContentIdByHash.clear();
         this._clearTermEntryContentMetaCaches();
-        this._termExactPresenceCache.clear();
-        this._termPrefixNegativeCache.clear();
         this._directTermIndexByDictionary.clear();
     }
 
@@ -1181,11 +1182,9 @@ export class DictionaryDatabase {
             }
         }
         this._statementCache.clear();
-        this._termEntryContentCache.clear();
+        this._clearTermLookupCaches();
         this._termEntryContentIdByHash.clear();
         this._clearTermEntryContentMetaCaches();
-        this._termExactPresenceCache.clear();
-        this._termPrefixNegativeCache.clear();
         this._directTermIndexByDictionary.clear();
     }
 
@@ -1274,6 +1273,24 @@ export class DictionaryDatabase {
      */
     _createTermExactPresenceCacheKey(dictionaryCacheKey, term) {
         return `${dictionaryCacheKey}\u001f${term}`;
+    }
+
+    /**
+     * @param {string} dictionaryCacheKey
+     * @param {string} pairKey
+     * @returns {string}
+     */
+    _createTermExactPairPresenceCacheKey(dictionaryCacheKey, pairKey) {
+        return `${dictionaryCacheKey}\u001f${pairKey}`;
+    }
+
+    /**
+     * @param {string} dictionary
+     * @param {number} sequence
+     * @returns {string}
+     */
+    _createTermSequencePresenceCacheKey(dictionary, sequence) {
+        return `${dictionary}\u001f${sequence}`;
     }
 
     /**
@@ -1536,6 +1553,7 @@ export class DictionaryDatabase {
         /** @type {import('dictionary-database').TermEntry[]} */
         const results = [];
         const dictionaryNames = this._getDictionaryNames(dictionaries);
+        const dictionaryCacheKey = this._getDictionaryCacheKey(dictionaryNames);
         /** @type {Map<string, number[]>} */
         const termReadingIndexes = new Map();
         for (let itemIndex = 0; itemIndex < termList.length; ++itemIndex) {
@@ -1548,16 +1566,22 @@ export class DictionaryDatabase {
                 itemIndexes.push(itemIndex);
             }
         }
-        const uniquePairs = [...termReadingIndexes.keys()];
         /** @type {Map<number, number[]>} */
         const idMatches = new Map();
-        for (const pair of uniquePairs) {
+        for (const pair of termReadingIndexes.keys()) {
+            const pairPresenceKey = this._createTermExactPairPresenceCacheKey(dictionaryCacheKey, pair);
+            const cachedPresence = this._termExactPairPresenceCache.get(pairPresenceKey);
+            if (cachedPresence === false) {
+                continue;
+            }
             const itemIndexes = termReadingIndexes.get(pair);
             if (typeof itemIndexes === 'undefined') { continue; }
+            let found = false;
             for (const dictionaryName of dictionaryNames) {
                 const index = this._ensureDirectTermIndex(dictionaryName);
                 const ids = index.pair.get(pair);
                 if (typeof ids === 'undefined') { continue; }
+                found = true;
                 for (const id of ids) {
                     if (id <= 0) { continue; }
                     const existingIndexes = idMatches.get(id);
@@ -1570,6 +1594,7 @@ export class DictionaryDatabase {
                     }
                 }
             }
+            this._setTermExactPairPresenceCached(pairPresenceKey, found);
         }
 
         const rowsById = await this._fetchTermRowsByIds(idMatches.keys());
@@ -1605,44 +1630,46 @@ export class DictionaryDatabase {
         }
         /** @type {import('dictionary-database').TermEntry[]} */
         const results = [];
-        /** @type {Map<string, number[]>} */
+        /** @type {Map<string, {dictionary: string, sequence: number, itemIndexes: number[]}>} */
         const dictionarySequenceIndexes = new Map();
         for (let itemIndex = 0; itemIndex < items.length; ++itemIndex) {
             const item = items[itemIndex];
             const sequence = this._asNumber(item.query, -1);
             if (sequence < 0) { continue; }
             const key = `${item.dictionary}\u001f${sequence}`;
-            const itemIndexes = dictionarySequenceIndexes.get(key);
-            if (typeof itemIndexes === 'undefined') {
-                dictionarySequenceIndexes.set(key, [itemIndex]);
+            const existing = dictionarySequenceIndexes.get(key);
+            if (typeof existing === 'undefined') {
+                dictionarySequenceIndexes.set(key, {dictionary: item.dictionary, sequence, itemIndexes: [itemIndex]});
             } else {
-                itemIndexes.push(itemIndex);
+                existing.itemIndexes.push(itemIndex);
             }
         }
         if (dictionarySequenceIndexes.size === 0) {
             return [];
         }
-        const dictionaryNames = [...new Set(items.map((item) => item.dictionary))];
-        const sequenceValues = [...new Set(items.map((item) => this._asNumber(item.query, -1)).filter((value) => value >= 0))];
         /** @type {Map<number, number[]>} */
         const idMatches = new Map();
-        for (const dictionaryName of dictionaryNames) {
-            const index = this._ensureDirectTermIndex(dictionaryName);
-            for (const sequence of sequenceValues) {
-                const ids = index.sequence.get(sequence);
-                if (typeof ids === 'undefined') { continue; }
-                const key = `${dictionaryName}\u001f${sequence}`;
-                const itemIndexes = dictionarySequenceIndexes.get(key);
-                if (typeof itemIndexes === 'undefined') { continue; }
-                for (const id of ids) {
-                    if (id <= 0) { continue; }
-                    const existingIndexes = idMatches.get(id);
-                    if (typeof existingIndexes === 'undefined') {
-                        idMatches.set(id, [...itemIndexes]);
-                    } else {
-                        for (const itemIndex of itemIndexes) {
-                            existingIndexes.push(itemIndex);
-                        }
+        for (const {dictionary, sequence, itemIndexes} of dictionarySequenceIndexes.values()) {
+            const sequencePresenceKey = this._createTermSequencePresenceCacheKey(dictionary, sequence);
+            const cachedPresence = this._termSequencePresenceCache.get(sequencePresenceKey);
+            if (cachedPresence === false) {
+                continue;
+            }
+            const index = this._ensureDirectTermIndex(dictionary);
+            const ids = index.sequence.get(sequence);
+            const found = (typeof ids !== 'undefined');
+            this._setTermSequencePresenceCached(sequencePresenceKey, found);
+            if (!found) {
+                continue;
+            }
+            for (const id of ids) {
+                if (id <= 0) { continue; }
+                const existingIndexes = idMatches.get(id);
+                if (typeof existingIndexes === 'undefined') {
+                    idMatches.set(id, [...itemIndexes]);
+                } else {
+                    for (const itemIndex of itemIndexes) {
+                        existingIndexes.push(itemIndex);
                     }
                 }
             }
@@ -2284,14 +2311,12 @@ export class DictionaryDatabase {
         if (objectStoreName === 'terms') {
             this._invalidateMaxHeadwordLengthCache();
             this._lastBulkAddTermsMetrics = null;
-            this._termEntryContentCache.clear();
+            this._clearTermLookupCaches();
             if (!this._bulkImportTransactionOpen) {
                 this._termEntryContentIdByHash.clear();
                 this._termEntryContentIdByKey.clear();
                 this._clearTermEntryContentMetaCaches();
             }
-            this._termExactPresenceCache.clear();
-            this._termPrefixNegativeCache.clear();
             this._directTermIndexByDictionary.clear();
         }
 
@@ -3608,11 +3633,9 @@ export class DictionaryDatabase {
             throw e;
         }
 
-        this._termEntryContentCache.clear();
+        this._clearTermLookupCaches();
         this._termEntryContentIdByHash.clear();
         this._clearTermEntryContentMetaCaches();
-        this._termExactPresenceCache.clear();
-        this._termPrefixNegativeCache.clear();
         this._directTermIndexByDictionary.clear();
         this._termEntryContentIdByKey.clear();
         this._sharedGlossaryArtifactMetaByDictionary.clear();
@@ -4684,6 +4707,64 @@ export class DictionaryDatabase {
         }
     }
 
+    /** */
+    _clearTermLookupCaches() {
+        this._termEntryContentCache.clear();
+        this._termGlossaryCache.clear();
+        this._termExactPresenceCache.clear();
+        this._termExactPairPresenceCache.clear();
+        this._termSequencePresenceCache.clear();
+        this._termPrefixNegativeCache.clear();
+    }
+
+    /**
+     * @param {Map<string, boolean>} cache
+     * @param {number} maxEntries
+     * @param {string} cacheKey
+     * @param {boolean} present
+     */
+    _setBoundedBooleanCache(cache, maxEntries, cacheKey, present) {
+        if (cache.has(cacheKey)) {
+            cache.delete(cacheKey);
+        }
+        cache.set(cacheKey, present);
+        while (cache.size > maxEntries) {
+            const oldestKey = cache.keys().next().value;
+            if (typeof oldestKey !== 'string') { break; }
+            cache.delete(oldestKey);
+        }
+    }
+
+    /**
+     * @param {string} cacheKey
+     * @returns {import('dictionary-data').TermGlossary[]|undefined}
+     */
+    _getCachedTermGlossary(cacheKey) {
+        const cached = this._termGlossaryCache.get(cacheKey);
+        if (typeof cached === 'undefined') {
+            return void 0;
+        }
+        this._termGlossaryCache.delete(cacheKey);
+        this._termGlossaryCache.set(cacheKey, cached);
+        return cached;
+    }
+
+    /**
+     * @param {string} cacheKey
+     * @param {import('dictionary-data').TermGlossary[]} glossary
+     */
+    _setCachedTermGlossary(cacheKey, glossary) {
+        if (this._termGlossaryCache.has(cacheKey)) {
+            this._termGlossaryCache.delete(cacheKey);
+        }
+        this._termGlossaryCache.set(cacheKey, glossary);
+        while (this._termGlossaryCache.size > this._termGlossaryCacheMaxEntries) {
+            const oldestKey = this._termGlossaryCache.keys().next().value;
+            if (typeof oldestKey !== 'string') { break; }
+            this._termGlossaryCache.delete(oldestKey);
+        }
+    }
+
     /**
      * @param {import('dictionary-database').TermEntry} entry
      * @returns {{cacheKey: string, type: 'slice'|'shared-slice'|'compressed-shared-slice', glossaryOffset: number, glossaryLength: number, dictionary?: string}|null}
@@ -4714,15 +4795,23 @@ export class DictionaryDatabase {
      * @param {boolean} present
      */
     _setTermExactPresenceCached(cacheKey, present) {
-        if (this._termExactPresenceCache.has(cacheKey)) {
-            this._termExactPresenceCache.delete(cacheKey);
-        }
-        this._termExactPresenceCache.set(cacheKey, present);
-        while (this._termExactPresenceCache.size > this._termExactPresenceCacheMaxEntries) {
-            const oldestKey = this._termExactPresenceCache.keys().next().value;
-            if (typeof oldestKey !== 'string') { break; }
-            this._termExactPresenceCache.delete(oldestKey);
-        }
+        this._setBoundedBooleanCache(this._termExactPresenceCache, this._termExactPresenceCacheMaxEntries, cacheKey, present);
+    }
+
+    /**
+     * @param {string} cacheKey
+     * @param {boolean} present
+     */
+    _setTermExactPairPresenceCached(cacheKey, present) {
+        this._setBoundedBooleanCache(this._termExactPairPresenceCache, this._termExactPairPresenceCacheMaxEntries, cacheKey, present);
+    }
+
+    /**
+     * @param {string} cacheKey
+     * @param {boolean} present
+     */
+    _setTermSequencePresenceCached(cacheKey, present) {
+        this._setBoundedBooleanCache(this._termSequencePresenceCache, this._termSequencePresenceCacheMaxEntries, cacheKey, present);
     }
 
     /**
@@ -4730,7 +4819,11 @@ export class DictionaryDatabase {
      * @returns {Promise<import('dictionary-data').TermGlossary[]>}
      */
     async _loadTermEntryGlossary(glossaryLoadData) {
-        const {type, glossaryOffset, glossaryLength} = glossaryLoadData;
+        const {cacheKey, type, glossaryOffset, glossaryLength} = glossaryLoadData;
+        const cached = this._getCachedTermGlossary(cacheKey);
+        if (typeof cached !== 'undefined') {
+            return cached;
+        }
         if (glossaryLength <= 0) {
             return [];
         }
@@ -4751,7 +4844,9 @@ export class DictionaryDatabase {
             default:
                 return [];
         }
-        return this._safeParseJson(this._textDecoder.decode(glossaryJsonBytes), []);
+        const glossary = this._safeParseJson(this._textDecoder.decode(glossaryJsonBytes), []);
+        this._setCachedTermGlossary(cacheKey, glossary);
+        return glossary;
     }
 
     /**
