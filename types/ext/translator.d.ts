@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023-2025  Yomitan Authors
+ * Copyright (C) 2023-2026  Yomitan Authors
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -17,6 +17,7 @@
 
 import type * as Dictionary from './dictionary';
 import type * as DictionaryDatabaseTypes from './dictionary-database';
+import type * as DictionaryData from './dictionary-data';
 
 /**
  * Information about how popup content should be shown, specifically related to the outer popup frame.
@@ -36,6 +37,8 @@ export type TermFrequencySimple = {
     displayValue: string | null;
     /** Whether or not the `frequency` field is derived from a parsed string. */
     displayValueParsed: boolean;
+    /** How the frequency should be interpreted. */
+    frequencyMode?: DictionaryData.FrequencyMode;
 };
 
 export type TagGroup = {
