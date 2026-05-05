@@ -17,6 +17,7 @@ if ([string]::IsNullOrWhiteSpace($LatestTag)) {
 }
 
 $ManifestVersion = $LatestTag -replace "^[^\d]*", ""
+# $ManifestVersion = "0.0.0.0"
 if ($ManifestVersion -notmatch "^\d+(\.\d+){0,3}$") {
     throw "Latest tag '$LatestTag' cannot be converted to a valid extension version."
 }

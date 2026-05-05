@@ -64,10 +64,17 @@ export type Options = {
 export type GlobalOptions = {
     database: GlobalDatabaseOptions;
     dataTransmissionConsentShown: boolean;
+    gsmOverlayRecommendations: GsmOverlayRecommendationsState;
 };
 
 export type GlobalDatabaseOptions = {
     prefixWildcardsSupported: boolean;
+};
+
+export type GsmOverlayRecommendationsState = {
+    appliedPackIds: string[];
+    dismissedPackIds: string[];
+    freshInstallSuppressedPackIds: string[];
 };
 
 export type Profile = {

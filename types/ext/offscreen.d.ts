@@ -39,6 +39,22 @@ type ApiSurface = {
         params: void;
         return: DictionaryImporter.Summary[];
     };
+    databaseDeleteDictionaryOffscreen: {
+        params: {
+            dictionaryTitle: string;
+        };
+        return: void;
+    };
+    databaseImportDictionaryOffscreen: {
+        params: {
+            archiveContent: ArrayBuffer;
+            details: DictionaryImporter.ImportDetails;
+        };
+        return: {
+            result: DictionaryImporter.Summary | null;
+            errors: import('./core').SerializedError[];
+        };
+    };
     databasePurgeOffscreen: {
         params: void;
         return: boolean;

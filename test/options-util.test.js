@@ -20,6 +20,12 @@ import fs from 'fs';
 import {fileURLToPath} from 'node:url';
 import path from 'path';
 import {describe, expect, test, vi} from 'vitest';
+import {parseJson} from '../dev/json.js';
+import {
+    defaultCustomPopupCss,
+    defaultCustomPopupOuterCss,
+    getGsmOverlayRecommendationPackIdsSuppressedOnFreshInstall,
+} from '../ext/js/data/gsm-overlay-recommended-settings.js';
 import {OptionsUtil} from '../ext/js/data/options-util.js';
 import {TemplatePatcher} from '../ext/js/templates/template-patcher.js';
 import {chrome, fetch} from './mocks/common.js';
@@ -28,6 +34,47 @@ const dirname = path.dirname(fileURLToPath(import.meta.url));
 
 vi.stubGlobal('fetch', fetch);
 vi.stubGlobal('chrome', chrome);
+
+/**
+ * @param {string|undefined} optionsStr
+ * @returns {{setCalls: string[], getStoredOptions: () => string|undefined}}
+ */
+function mockOptionsStorage(optionsStr) {
+    /** @type {string|undefined} */
+    let storedOptions = optionsStr;
+    /** @type {string[]} */
+    const setCalls = [];
+
+    chrome.runtime.lastError = null;
+    chrome.storage = {
+        local: {
+            get: (_keys, callback) => {
+                callback(typeof storedOptions === 'undefined' ? {} : {options: storedOptions});
+            },
+            set: (items, callback) => {
+                const options = /** @type {{options: string}} */ (items).options;
+                storedOptions = options;
+                setCalls.push(options);
+                callback();
+            },
+        },
+        session: {
+            set: () => Promise.resolve(),
+            get: () => Promise.resolve({}),
+            remove: () => Promise.resolve(),
+        },
+    };
+    chrome.tabs = {
+        create: (_createProperties, callback) => {
+            callback(/** @type {chrome.tabs.Tab} */ ({}));
+        },
+    };
+
+    return {
+        setCalls,
+        getStoredOptions: () => storedOptions,
+    };
+}
 
 /**
  * @returns {unknown}
@@ -301,8 +348,8 @@ function createProfileOptionsUpdatedTestData1() {
             showPitchAccentPositionNotation: true,
             showPitchAccentGraph: false,
             showIframePopupsInRootFrame: false,
-            useSecurePopupFrameUrl: true,
-            usePopupShadowDom: true,
+            useSecurePopupFrameUrl: false,
+            usePopupShadowDom: false,
             usePopupWindow: false,
             popupCurrentIndicatorMode: 'triangle',
             popupActionBarVisibility: 'auto',
@@ -704,12 +751,17 @@ function createOptionsUpdatedTestData1() {
             },
         ],
         profileCurrent: 0,
-        version: 74,
+        version: 75,
         global: {
             database: {
                 prefixWildcardsSupported: false,
             },
             dataTransmissionConsentShown: false,
+            gsmOverlayRecommendations: {
+                appliedPackIds: [],
+                dismissedPackIds: [],
+                freshInstallSuppressedPackIds: [],
+            },
         },
     };
 }
@@ -757,6 +809,74 @@ describe('OptionsUtil', () => {
         const partialsExpected = getHandlebarsPartials(defaultAnkiFieldTemplates);
 
         expect(partialsUpdated).toStrictEqual(partialsExpected);
+    });
+
+    test('UpdateDoesNotSetDefaultPopupCssForExistingProfilesUsingOldDefault', async () => {
+        const optionsUtil = new OptionsUtil();
+        await optionsUtil.prepare();
+
+        const options = structuredClone(createOptionsUpdatedTestData1());
+        options.profiles[0].options.general.customPopupCss = '';
+        options.profiles[0].options.general.customPopupOuterCss = '';
+
+        const optionsUpdated = await optionsUtil.update(options);
+        expect(optionsUpdated.profiles[0].options.general.customPopupCss).toBe('');
+        expect(optionsUpdated.profiles[0].options.general.customPopupOuterCss).toBe('');
+    });
+
+    test('UpdatePreservesExistingCustomPopupCss', async () => {
+        const optionsUtil = new OptionsUtil();
+        await optionsUtil.prepare();
+
+        const options = structuredClone(optionsUtil.getDefault());
+        const customPopupCss = 'body { color: #f00; }';
+        const customPopupOuterCss = 'iframe.yomitan-popup { border: 2px solid red; }';
+        options.version = 75;
+        options.profiles[0].options.general.customPopupCss = customPopupCss;
+        options.profiles[0].options.general.customPopupOuterCss = customPopupOuterCss;
+
+        const optionsUpdated = await optionsUtil.update(options);
+        expect(optionsUpdated.profiles[0].options.general.customPopupCss).toBe(customPopupCss);
+        expect(optionsUpdated.profiles[0].options.general.customPopupOuterCss).toBe(customPopupOuterCss);
+    });
+
+    test('LoadSuppressesFreshInstallRecommendationPacks', async () => {
+        const optionsUtil = new OptionsUtil();
+        await optionsUtil.prepare();
+
+        const {setCalls} = mockOptionsStorage();
+        const options = await optionsUtil.load();
+
+        expect(options.global.gsmOverlayRecommendations).toStrictEqual({
+            appliedPackIds: [],
+            dismissedPackIds: [],
+            freshInstallSuppressedPackIds: getGsmOverlayRecommendationPackIdsSuppressedOnFreshInstall(),
+        });
+        expect(options.profiles[0].options.general.customPopupCss).toBe(defaultCustomPopupCss);
+        expect(options.profiles[0].options.general.customPopupOuterCss).toBe(defaultCustomPopupOuterCss);
+        expect(options.profiles[0].options.scanning.inputs[0].include).toBe('');
+        expect(options.profiles[0].options.scanning.autoHideResults).toBe(true);
+        expect(options.profiles[0].options.scanning.hidePopupOnCursorExit).toBe(true);
+        expect(options.profiles[0].options.scanning.hidePopupOnCursorExitDelay).toBe(50);
+        expect(setCalls).toHaveLength(0);
+    });
+
+    test('LoadDoesNotSuppressOrUpgradeExistingInstallRecommendationPacks', async () => {
+        const optionsUtil = new OptionsUtil();
+        await optionsUtil.prepare();
+
+        const {setCalls, getStoredOptions} = mockOptionsStorage(JSON.stringify(createOptionsUpdatedTestData1()));
+        const options = await optionsUtil.load();
+
+        expect(options.global.gsmOverlayRecommendations).toStrictEqual({
+            appliedPackIds: [],
+            dismissedPackIds: [],
+            freshInstallSuppressedPackIds: [],
+        });
+        expect(options.profiles[0].options.general.customPopupCss).toBe('');
+        expect(options.profiles[0].options.general.customPopupOuterCss).toBe('');
+        expect(setCalls).toHaveLength(1);
+        expect(parseJson(/** @type {string} */ (getStoredOptions()))).toStrictEqual(options);
     });
 
     describe('Default', () => {
