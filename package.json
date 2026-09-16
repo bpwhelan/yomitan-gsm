@@ -70,7 +70,7 @@
         "@stylistic/stylelint-plugin": "^3.1.1",
         "@types/assert": "^1.5.11",
         "@types/browserify": "^12.0.40",
-        "@types/chrome": "^0.0.287",
+        "@types/chrome": "^0.2.2",
         "@types/css": "^0.0.38",
         "@types/dom-webcodecs": "^0.1.13",
         "@types/events": "^3.0.3",
@@ -118,9 +118,9 @@
         "dexie-export-import": "^4.1.4",
         "hangul-js": "^0.2.6",
         "kanji-processor": "^1.0.2",
+        "linkedom": "^0.18.10",
         "parse5": "^7.2.1",
-        "yomitan-handlebars": "git+https://github.com/yomidevs/yomitan-handlebars.git#12aff5e3550954d7d3a98a5917ff7d579f3cce25",
-        "linkedom": "^0.18.10"
+        "yomitan-handlebars": "git+https://github.com/yomidevs/yomitan-handlebars.git#12aff5e3550954d7d3a98a5917ff7d579f3cce25"
     },
     "lint-staged": {
         "*.md": "prettier --write"

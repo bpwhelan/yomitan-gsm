@@ -122,6 +122,7 @@ export type GeneralOptions = {
     fontSize: number;
     lineHeight: string;
     popupDisplayMode: PopupDisplayMode;
+    popupFullWidthPosition: PopupFullWidthPosition;
     popupWidth: number;
     popupHeight: number;
     popupHorizontalOffset: number;
@@ -404,6 +405,8 @@ export type ResultOutputMode = 'group' | 'merge' | 'split' | 'term';
 
 export type PopupDisplayMode = 'default' | 'full-width';
 
+export type PopupFullWidthPosition = 'top' | 'above-cursor' | 'bottom';
+
 export type PopupHorizontalTextPosition = 'below' | 'above';
 
 export type PopupVerticalTextPosition = 'default' | 'before' | 'after' | 'left' | 'right';
@@ -420,7 +423,7 @@ export type PopupActionBarVisibility = 'auto' | 'always';
 
 export type PopupActionBarLocation = 'left' | 'right' | 'top' | 'bottom';
 
-export type FrequencyDisplayMode = 'tags' | 'tags-grouped' | 'split-tags' | 'split-tags-grouped' | 'inline-list' | 'list';
+export type FrequencyDisplayMode = 'tags' | 'tags-grouped' | 'split-tags' | 'split-tags-grouped' | 'inline-list' | 'list' | 'list-bordered';
 
 export type TermDisplayMode = 'ruby' | 'ruby-and-reading' | 'term-and-reading' | 'term-only';
 

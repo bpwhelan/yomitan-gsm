@@ -90,6 +90,7 @@ function createProfileOptionsTestData1() {
             maxResults: 32,
             showAdvanced: false,
             popupDisplayMode: 'default',
+            popupFullWidthPosition: 'bottom',
             popupWidth: 400,
             popupHeight: 250,
             popupHorizontalOffset: 0,
@@ -322,6 +323,7 @@ function createProfileOptionsUpdatedTestData1() {
             showAdvanced: false,
             showDebug: false,
             popupDisplayMode: 'default',
+            popupFullWidthPosition: 'bottom',
             popupWidth: 400,
             popupHeight: 250,
             popupHorizontalOffset: 0,
@@ -752,7 +754,7 @@ function createOptionsUpdatedTestData1() {
             },
         ],
         profileCurrent: 0,
-        version: 76,
+        version: 77,
         global: {
             database: {
                 prefixWildcardsSupported: false,
@@ -791,6 +793,63 @@ describe('OptionsUtil', () => {
         const optionsUpdated = structuredClone(await optionsUtil.update(options));
         const optionsExpected = createOptionsUpdatedTestData1();
         expect(optionsUpdated).toStrictEqual(optionsExpected);
+    });
+
+    test('UpdateVersion75KeepsGsmAndUpstreamPopupMigrations', async () => {
+        const optionsUtil = new OptionsUtil();
+        await optionsUtil.prepare();
+
+        const options = structuredClone(optionsUtil.getDefault());
+        options.version = 75;
+        const general = options.profiles[0].options.general;
+        general.useSecurePopupFrameUrl = true;
+        general.usePopupShadowDom = true;
+        general.popupTheme = 'light';
+        general.popupOuterTheme = 'light';
+        Reflect.deleteProperty(general, 'popupFullWidthPosition');
+        options.profiles.push(structuredClone(options.profiles[0]));
+
+        const optionsUpdated = await optionsUtil.update(options);
+        expect(optionsUpdated.version).toBe(77);
+        for (const profile of optionsUpdated.profiles) {
+            expect(profile.options.general).toMatchObject({
+                useSecurePopupFrameUrl: false,
+                usePopupShadowDom: false,
+                popupTheme: 'dark',
+                popupOuterTheme: 'dark',
+                popupFullWidthPosition: 'bottom',
+            });
+        }
+    });
+
+    test('UpdateLegacyGsmVersion76PreservesPreferencesAndAddsUpstreamSettings', async () => {
+        const optionsUtil = new OptionsUtil();
+        await optionsUtil.prepare();
+
+        const options = structuredClone(optionsUtil.getDefault());
+        options.version = 76;
+        const {general, anki} = options.profiles[0].options;
+        general.popupTheme = 'light';
+        general.popupOuterTheme = 'light';
+        general.customPopupCss = 'body { color: #f00; }';
+        Reflect.deleteProperty(general, 'popupFullWidthPosition');
+        const customTemplate = '{{~#*inline "gsm-custom"~}}Custom field{{~/inline~}}';
+        anki.fieldTemplates = customTemplate;
+
+        const optionsUpdated = await optionsUtil.update(options);
+        expect(optionsUpdated.version).toBe(77);
+        expect(optionsUpdated.profiles[0].options.general).toMatchObject({
+            useSecurePopupFrameUrl: false,
+            usePopupShadowDom: false,
+            popupTheme: 'light',
+            popupOuterTheme: 'light',
+            customPopupCss: general.customPopupCss,
+            popupFullWidthPosition: 'bottom',
+        });
+        const partials = getHandlebarsPartials(optionsUpdated.profiles[0].options.anki.fieldTemplates || '');
+        expect(partials.get('gsm-custom')).toBe(customTemplate);
+        expect(partials.get('url-plain')).toContain('{{definition.url}}');
+        expect(await optionsUtil.update(structuredClone(optionsUpdated))).toStrictEqual(optionsUpdated);
     });
 
     test('CumulativeFieldTemplatesUpdates', async () => {
