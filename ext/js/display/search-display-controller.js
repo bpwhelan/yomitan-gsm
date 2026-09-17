@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023-2025  Yomitan Authors
+ * Copyright (C) 2023-2026  Yomitan Authors
  * Copyright (C) 2016-2022  Yomichan Authors
  *
  * This program is free software: you can redistribute it and/or modify
@@ -588,7 +588,7 @@ export class SearchDisplayController {
     }
 
     /**
-     * @param {string[]} permissions
+     * @param {chrome.runtime.ManifestPermission[]} permissions
      * @returns {Promise<boolean>}
      */
     _requestPermissions(permissions) {

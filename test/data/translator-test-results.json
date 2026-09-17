@@ -116,7 +116,8 @@
             "character": "打",
             "frequency": 1,
             "displayValue": null,
-            "displayValueParsed": false
+            "displayValueParsed": false,
+            "frequencyMode": null
           },
           {
             "index": 1,
@@ -126,7 +127,8 @@
             "character": "打",
             "frequency": 0,
             "displayValue": "three",
-            "displayValueParsed": true
+            "displayValueParsed": true,
+            "frequencyMode": null
           },
           {
             "index": 2,
@@ -136,7 +138,8 @@
             "character": "打",
             "frequency": 5,
             "displayValue": null,
-            "displayValueParsed": false
+            "displayValueParsed": false,
+            "frequencyMode": null
           }
         ]
       }
@@ -258,7 +261,8 @@
             "character": "込",
             "frequency": 2,
             "displayValue": null,
-            "displayValueParsed": false
+            "displayValueParsed": false,
+            "frequencyMode": null
           },
           {
             "index": 1,
@@ -268,7 +272,8 @@
             "character": "込",
             "frequency": 4,
             "displayValue": "four (4)",
-            "displayValueParsed": true
+            "displayValueParsed": true,
+            "frequencyMode": null
           },
           {
             "index": 2,
@@ -278,7 +283,8 @@
             "character": "込",
             "frequency": 6,
             "displayValue": "six",
-            "displayValueParsed": false
+            "displayValueParsed": false,
+            "frequencyMode": null
           }
         ]
       }
@@ -314,6 +320,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打",
             "reading": "だ",
             "sources": [
@@ -389,6 +396,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -400,6 +408,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -411,6 +420,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -422,6 +432,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -433,6 +444,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -444,6 +456,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -455,6 +468,7 @@
             "index": 6,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -486,6 +500,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打",
             "reading": "ダース",
             "sources": [
@@ -574,6 +589,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -585,6 +601,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -596,6 +613,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -607,6 +625,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -618,6 +637,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -629,6 +649,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -640,6 +661,7 @@
             "index": 6,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -677,6 +699,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打つ",
             "reading": "うつ",
             "sources": [
@@ -765,6 +788,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -776,6 +800,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -787,6 +812,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -798,6 +824,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -809,6 +836,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -820,6 +848,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -851,6 +880,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打つ",
             "reading": "ぶつ",
             "sources": [
@@ -939,6 +969,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -950,6 +981,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -961,6 +993,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -972,6 +1005,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -983,6 +1017,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -994,6 +1029,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -1025,6 +1061,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打つ",
             "reading": "うつ",
             "sources": [
@@ -1113,6 +1150,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -1124,6 +1162,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -1135,6 +1174,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -1146,6 +1186,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -1157,6 +1198,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -1168,6 +1210,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -1199,6 +1242,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打つ",
             "reading": "ぶつ",
             "sources": [
@@ -1287,6 +1331,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -1298,6 +1343,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -1309,6 +1355,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -1320,6 +1367,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -1331,6 +1379,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -1342,6 +1391,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -1373,6 +1423,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打",
             "reading": "だ",
             "sources": [
@@ -1448,6 +1499,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -1459,6 +1511,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -1470,6 +1523,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -1481,6 +1535,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -1492,6 +1547,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -1503,6 +1559,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -1514,6 +1571,7 @@
             "index": 6,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -1545,6 +1603,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打",
             "reading": "ダース",
             "sources": [
@@ -1633,6 +1692,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -1644,6 +1704,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -1655,6 +1716,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -1666,6 +1728,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -1677,6 +1740,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -1688,6 +1752,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -1699,6 +1764,7 @@
             "index": 6,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -1736,6 +1802,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打ち込む",
             "reading": "うちこむ",
             "sources": [
@@ -1991,6 +2058,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -2002,6 +2070,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -2013,6 +2082,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -2024,6 +2094,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -2035,6 +2106,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -2046,6 +2118,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -2077,6 +2150,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打ち込む",
             "reading": "ぶちこむ",
             "sources": [
@@ -2189,6 +2263,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -2200,6 +2275,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -2211,6 +2287,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -2222,6 +2299,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -2233,6 +2311,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -2244,6 +2323,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -2275,6 +2355,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打ち込む",
             "reading": "うちこむ",
             "sources": [
@@ -2530,6 +2611,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -2541,6 +2623,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -2552,6 +2635,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -2563,6 +2647,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -2574,6 +2659,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -2585,6 +2671,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -2616,6 +2703,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打ち込む",
             "reading": "ぶちこむ",
             "sources": [
@@ -2728,6 +2816,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -2739,6 +2828,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -2750,6 +2840,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -2761,6 +2852,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -2772,6 +2864,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -2783,6 +2876,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -2819,6 +2913,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打つ",
             "reading": "うつ",
             "sources": [
@@ -2907,6 +3002,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -2918,6 +3014,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -2929,6 +3026,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -2940,6 +3038,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -2951,6 +3050,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -2962,6 +3062,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -2998,6 +3099,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打つ",
             "reading": "ぶつ",
             "sources": [
@@ -3086,6 +3188,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -3097,6 +3200,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -3108,6 +3212,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -3119,6 +3224,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -3130,6 +3236,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -3141,6 +3248,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -3177,6 +3285,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打つ",
             "reading": "うつ",
             "sources": [
@@ -3265,6 +3374,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -3276,6 +3386,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -3287,6 +3398,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -3298,6 +3410,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -3309,6 +3422,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -3320,6 +3434,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -3356,6 +3471,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打つ",
             "reading": "ぶつ",
             "sources": [
@@ -3444,6 +3560,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -3455,6 +3572,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -3466,6 +3584,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -3477,6 +3596,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -3488,6 +3608,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -3499,6 +3620,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -3530,6 +3652,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打",
             "reading": "だ",
             "sources": [
@@ -3605,6 +3728,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -3616,6 +3740,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -3627,6 +3752,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -3638,6 +3764,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -3649,6 +3776,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -3660,6 +3788,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -3671,6 +3800,7 @@
             "index": 6,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -3702,6 +3832,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打",
             "reading": "ダース",
             "sources": [
@@ -3790,6 +3921,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -3801,6 +3933,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -3812,6 +3945,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -3823,6 +3957,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -3834,6 +3969,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -3845,6 +3981,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -3856,6 +3993,7 @@
             "index": 6,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -3893,6 +4031,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "画像",
             "reading": "がぞう",
             "sources": [
@@ -4015,6 +4154,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打",
             "reading": "だ",
             "sources": [
@@ -4090,6 +4230,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -4101,6 +4242,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -4112,6 +4254,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -4123,6 +4266,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -4134,6 +4278,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -4145,6 +4290,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -4156,6 +4302,7 @@
             "index": 6,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -4193,6 +4340,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打",
             "reading": "ダース",
             "sources": [
@@ -4281,6 +4429,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -4292,6 +4441,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -4303,6 +4453,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -4314,6 +4465,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -4325,6 +4477,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -4336,6 +4489,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -4347,6 +4501,7 @@
             "index": 6,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -4380,6 +4535,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打",
             "reading": "だ",
             "sources": [
@@ -4455,6 +4611,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -4466,6 +4623,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -4477,6 +4635,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -4488,6 +4647,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -4499,6 +4659,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -4510,6 +4671,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -4521,6 +4683,7 @@
             "index": 6,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -4558,6 +4721,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打つ",
             "reading": "うつ",
             "sources": [
@@ -4646,6 +4810,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -4657,6 +4822,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -4668,6 +4834,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -4679,6 +4846,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -4690,6 +4858,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -4701,6 +4870,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -4732,6 +4902,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打つ",
             "reading": "うつ",
             "sources": [
@@ -4820,6 +4991,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -4831,6 +5003,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -4842,6 +5015,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -4853,6 +5027,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -4864,6 +5039,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -4875,6 +5051,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -4912,6 +5089,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打つ",
             "reading": "ぶつ",
             "sources": [
@@ -5000,6 +5178,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -5011,6 +5190,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -5022,6 +5202,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -5033,6 +5214,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -5044,6 +5226,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -5055,6 +5238,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -5086,6 +5270,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打つ",
             "reading": "ぶつ",
             "sources": [
@@ -5174,6 +5359,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -5185,6 +5371,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -5196,6 +5383,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -5207,6 +5395,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -5218,6 +5407,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -5229,6 +5419,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -5266,6 +5457,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打ち込む",
             "reading": "うちこむ",
             "sources": [
@@ -5521,6 +5713,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -5532,6 +5725,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -5543,6 +5737,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -5554,6 +5749,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -5565,6 +5761,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -5576,6 +5773,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -5607,6 +5805,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打ち込む",
             "reading": "うちこむ",
             "sources": [
@@ -5862,6 +6061,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -5873,6 +6073,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -5884,6 +6085,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -5895,6 +6097,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -5906,6 +6109,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -5917,6 +6121,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -5953,6 +6158,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打つ",
             "reading": "うつ",
             "sources": [
@@ -6041,6 +6247,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -6052,6 +6259,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -6063,6 +6271,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -6074,6 +6283,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -6085,6 +6295,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -6096,6 +6307,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -6132,6 +6344,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打つ",
             "reading": "うつ",
             "sources": [
@@ -6220,6 +6433,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -6231,6 +6445,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -6242,6 +6457,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -6253,6 +6469,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -6264,6 +6481,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -6275,6 +6493,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -6312,6 +6531,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打ち込む",
             "reading": "ぶちこむ",
             "sources": [
@@ -6424,6 +6644,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -6435,6 +6656,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -6446,6 +6668,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -6457,6 +6680,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -6468,6 +6692,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -6479,6 +6704,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -6510,6 +6736,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打ち込む",
             "reading": "ぶちこむ",
             "sources": [
@@ -6622,6 +6849,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -6633,6 +6861,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -6644,6 +6873,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -6655,6 +6885,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -6666,6 +6897,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -6677,6 +6909,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -6713,6 +6946,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打つ",
             "reading": "ぶつ",
             "sources": [
@@ -6801,6 +7035,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -6812,6 +7047,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -6823,6 +7059,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -6834,6 +7071,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -6845,6 +7083,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -6856,6 +7095,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -6892,6 +7132,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打つ",
             "reading": "ぶつ",
             "sources": [
@@ -6980,6 +7221,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -6991,6 +7233,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -7002,6 +7245,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -7013,6 +7257,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -7024,6 +7269,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -7035,6 +7281,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -7072,6 +7319,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "画像",
             "reading": "がぞう",
             "sources": [
@@ -7204,6 +7452,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打ち込む",
             "reading": "うちこむ",
             "sources": [
@@ -7270,6 +7519,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打ち込む",
             "reading": "ぶちこむ",
             "sources": [
@@ -7336,6 +7586,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打ち込む",
             "reading": "うちこむ",
             "sources": [
@@ -7402,6 +7653,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打ち込む",
             "reading": "ぶちこむ",
             "sources": [
@@ -7473,6 +7725,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打つ",
             "reading": "うつ",
             "sources": [
@@ -7544,6 +7797,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打つ",
             "reading": "ぶつ",
             "sources": [
@@ -7615,6 +7869,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打つ",
             "reading": "うつ",
             "sources": [
@@ -7686,6 +7941,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打つ",
             "reading": "ぶつ",
             "sources": [
@@ -7752,6 +8008,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打",
             "reading": "だ",
             "sources": [
@@ -7818,6 +8075,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打",
             "reading": "ダース",
             "sources": [
@@ -7890,6 +8148,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打ち込む",
             "reading": "うちこむ",
             "sources": [
@@ -8193,6 +8452,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -8204,6 +8464,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -8215,6 +8476,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -8226,6 +8488,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -8237,6 +8500,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -8248,6 +8512,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -8279,6 +8544,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打ち込む",
             "reading": "ぶちこむ",
             "sources": [
@@ -8439,6 +8705,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -8450,6 +8717,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -8461,6 +8729,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -8472,6 +8741,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -8483,6 +8753,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -8494,6 +8765,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -8530,6 +8802,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打つ",
             "reading": "うつ",
             "sources": [
@@ -8666,6 +8939,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -8677,6 +8951,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -8688,6 +8963,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -8699,6 +8975,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -8710,6 +8987,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -8721,6 +8999,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -8757,6 +9036,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打つ",
             "reading": "ぶつ",
             "sources": [
@@ -8893,6 +9173,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -8904,6 +9185,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -8915,6 +9197,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -8926,6 +9209,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -8937,6 +9221,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -8948,6 +9233,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -8979,6 +9265,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打",
             "reading": "だ",
             "sources": [
@@ -9054,6 +9341,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -9065,6 +9353,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -9076,6 +9365,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -9087,6 +9377,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -9098,6 +9389,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -9109,6 +9401,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -9120,6 +9413,7 @@
             "index": 6,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -9151,6 +9445,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打",
             "reading": "ダース",
             "sources": [
@@ -9239,6 +9534,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -9250,6 +9546,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -9261,6 +9558,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -9272,6 +9570,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -9283,6 +9582,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -9294,6 +9594,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -9305,6 +9606,7 @@
             "index": 6,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -9342,6 +9644,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打ち込む",
             "reading": "うちこむ",
             "sources": [
@@ -9401,6 +9704,7 @@
           },
           {
             "index": 1,
+            "headwordIndex": 1,
             "term": "打ち込む",
             "reading": "ぶちこむ",
             "sources": [
@@ -9797,6 +10101,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -9808,6 +10113,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -9819,6 +10125,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -9830,6 +10137,7 @@
             "index": 6,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -9841,6 +10149,7 @@
             "index": 8,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -9852,6 +10161,7 @@
             "index": 10,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -9863,6 +10173,7 @@
             "index": 1,
             "headwordIndex": 1,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -9874,6 +10185,7 @@
             "index": 3,
             "headwordIndex": 1,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -9885,6 +10197,7 @@
             "index": 5,
             "headwordIndex": 1,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -9896,6 +10209,7 @@
             "index": 7,
             "headwordIndex": 1,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -9907,6 +10221,7 @@
             "index": 9,
             "headwordIndex": 1,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -9918,6 +10233,7 @@
             "index": 11,
             "headwordIndex": 1,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -9954,6 +10270,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打つ",
             "reading": "うつ",
             "sources": [
@@ -10013,6 +10330,7 @@
           },
           {
             "index": 1,
+            "headwordIndex": 1,
             "term": "打つ",
             "reading": "ぶつ",
             "sources": [
@@ -10219,6 +10537,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -10230,6 +10549,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -10241,6 +10561,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -10252,6 +10573,7 @@
             "index": 6,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -10263,6 +10585,7 @@
             "index": 8,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -10274,6 +10597,7 @@
             "index": 10,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -10285,6 +10609,7 @@
             "index": 1,
             "headwordIndex": 1,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -10296,6 +10621,7 @@
             "index": 3,
             "headwordIndex": 1,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -10307,6 +10633,7 @@
             "index": 5,
             "headwordIndex": 1,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -10318,6 +10645,7 @@
             "index": 7,
             "headwordIndex": 1,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -10329,6 +10657,7 @@
             "index": 9,
             "headwordIndex": 1,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -10340,6 +10669,7 @@
             "index": 11,
             "headwordIndex": 1,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -10371,6 +10701,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打",
             "reading": "だ",
             "sources": [
@@ -10446,6 +10777,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -10457,6 +10789,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -10468,6 +10801,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -10479,6 +10813,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -10490,6 +10825,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -10501,6 +10837,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -10512,6 +10849,7 @@
             "index": 6,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -10543,6 +10881,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打",
             "reading": "ダース",
             "sources": [
@@ -10631,6 +10970,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -10642,6 +10982,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -10653,6 +10994,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -10664,6 +11006,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -10675,6 +11018,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -10686,6 +11030,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -10697,6 +11042,7 @@
             "index": 6,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -10734,6 +11080,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打ち込む",
             "reading": "うちこむ",
             "sources": [
@@ -10793,6 +11140,7 @@
           },
           {
             "index": 1,
+            "headwordIndex": 1,
             "term": "打ち込む",
             "reading": "ぶちこむ",
             "sources": [
@@ -11189,6 +11537,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -11200,6 +11549,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -11211,6 +11561,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -11222,6 +11573,7 @@
             "index": 6,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -11233,6 +11585,7 @@
             "index": 8,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -11244,6 +11597,7 @@
             "index": 10,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -11255,6 +11609,7 @@
             "index": 1,
             "headwordIndex": 1,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -11266,6 +11621,7 @@
             "index": 3,
             "headwordIndex": 1,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -11277,6 +11633,7 @@
             "index": 5,
             "headwordIndex": 1,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -11288,6 +11645,7 @@
             "index": 7,
             "headwordIndex": 1,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -11299,6 +11657,7 @@
             "index": 9,
             "headwordIndex": 1,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -11310,6 +11669,7 @@
             "index": 11,
             "headwordIndex": 1,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -11346,6 +11706,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打つ",
             "reading": "うつ",
             "sources": [
@@ -11405,6 +11766,7 @@
           },
           {
             "index": 1,
+            "headwordIndex": 1,
             "term": "打つ",
             "reading": "ぶつ",
             "sources": [
@@ -11611,6 +11973,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -11622,6 +11985,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -11633,6 +11997,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -11644,6 +12009,7 @@
             "index": 6,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -11655,6 +12021,7 @@
             "index": 8,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -11666,6 +12033,7 @@
             "index": 10,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -11677,6 +12045,7 @@
             "index": 1,
             "headwordIndex": 1,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -11688,6 +12057,7 @@
             "index": 3,
             "headwordIndex": 1,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -11699,6 +12069,7 @@
             "index": 5,
             "headwordIndex": 1,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -11710,6 +12081,7 @@
             "index": 7,
             "headwordIndex": 1,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -11721,6 +12093,7 @@
             "index": 9,
             "headwordIndex": 1,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -11732,6 +12105,7 @@
             "index": 11,
             "headwordIndex": 1,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -11763,6 +12137,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打",
             "reading": "だ",
             "sources": [
@@ -11796,6 +12171,7 @@
           },
           {
             "index": 1,
+            "headwordIndex": 1,
             "term": "打",
             "reading": "ダース",
             "sources": [
@@ -11919,6 +12295,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -11930,6 +12307,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -11941,6 +12319,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -11952,6 +12331,7 @@
             "index": 6,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -11963,6 +12343,7 @@
             "index": 8,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -11974,6 +12355,7 @@
             "index": 10,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -11985,6 +12367,7 @@
             "index": 12,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -11996,6 +12379,7 @@
             "index": 1,
             "headwordIndex": 1,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -12007,6 +12391,7 @@
             "index": 3,
             "headwordIndex": 1,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -12018,6 +12403,7 @@
             "index": 5,
             "headwordIndex": 1,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -12029,6 +12415,7 @@
             "index": 7,
             "headwordIndex": 1,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -12040,6 +12427,7 @@
             "index": 9,
             "headwordIndex": 1,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -12051,6 +12439,7 @@
             "index": 11,
             "headwordIndex": 1,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -12062,6 +12451,7 @@
             "index": 13,
             "headwordIndex": 1,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -12120,6 +12510,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打ち込む",
             "reading": "うちこむ",
             "sources": [
@@ -12375,6 +12766,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -12386,6 +12778,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -12397,6 +12790,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -12408,6 +12802,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -12419,6 +12814,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -12430,6 +12826,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -12482,6 +12879,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打ち込む",
             "reading": "ぶちこむ",
             "sources": [
@@ -12594,6 +12992,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -12605,6 +13004,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -12616,6 +13016,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -12627,6 +13028,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -12638,6 +13040,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -12649,6 +13052,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -12701,6 +13105,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打ち込む",
             "reading": "うちこむ",
             "sources": [
@@ -12956,6 +13361,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -12967,6 +13373,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -12978,6 +13385,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -12989,6 +13397,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -13000,6 +13409,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -13011,6 +13421,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -13063,6 +13474,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打ち込む",
             "reading": "ぶちこむ",
             "sources": [
@@ -13175,6 +13587,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -13186,6 +13599,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -13197,6 +13611,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -13208,6 +13623,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -13219,6 +13635,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -13230,6 +13647,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -13266,6 +13684,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打つ",
             "reading": "うつ",
             "sources": [
@@ -13354,6 +13773,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -13365,6 +13785,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -13376,6 +13797,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -13387,6 +13809,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -13398,6 +13821,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -13409,6 +13833,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -13445,6 +13870,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打つ",
             "reading": "ぶつ",
             "sources": [
@@ -13533,6 +13959,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -13544,6 +13971,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -13555,6 +13983,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -13566,6 +13995,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -13577,6 +14007,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -13588,6 +14019,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -13624,6 +14056,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打つ",
             "reading": "うつ",
             "sources": [
@@ -13712,6 +14145,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -13723,6 +14157,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -13734,6 +14169,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -13745,6 +14181,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -13756,6 +14193,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -13767,6 +14205,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -13803,6 +14242,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打つ",
             "reading": "ぶつ",
             "sources": [
@@ -13891,6 +14331,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -13902,6 +14343,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -13913,6 +14355,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -13924,6 +14367,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -13935,6 +14379,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -13946,6 +14391,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -13977,6 +14423,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打",
             "reading": "だ",
             "sources": [
@@ -14052,6 +14499,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -14063,6 +14511,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -14074,6 +14523,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -14085,6 +14535,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -14096,6 +14547,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -14107,6 +14559,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -14118,6 +14571,7 @@
             "index": 6,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -14149,6 +14603,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打",
             "reading": "ダース",
             "sources": [
@@ -14237,6 +14692,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -14248,6 +14704,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -14259,6 +14716,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -14270,6 +14728,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -14281,6 +14740,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -14292,6 +14752,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -14303,6 +14764,7 @@
             "index": 6,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -14342,6 +14804,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打ち込む",
             "reading": "うちこむ",
             "sources": [
@@ -14597,6 +15060,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -14608,6 +15072,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -14619,6 +15084,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -14630,6 +15096,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -14641,6 +15108,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -14652,6 +15120,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -14685,6 +15154,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打ち込む",
             "reading": "ぶちこむ",
             "sources": [
@@ -14797,6 +15267,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -14808,6 +15279,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -14819,6 +15291,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -14830,6 +15303,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -14841,6 +15315,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -14852,6 +15327,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -14885,6 +15361,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打ち込む",
             "reading": "うちこむ",
             "sources": [
@@ -15140,6 +15617,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -15151,6 +15629,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -15162,6 +15641,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -15173,6 +15653,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -15184,6 +15665,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -15195,6 +15677,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -15228,6 +15711,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打ち込む",
             "reading": "ぶちこむ",
             "sources": [
@@ -15340,6 +15824,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -15351,6 +15836,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -15362,6 +15848,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -15373,6 +15860,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -15384,6 +15872,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -15395,6 +15884,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -15433,6 +15923,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打つ",
             "reading": "うつ",
             "sources": [
@@ -15521,6 +16012,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -15532,6 +16024,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -15543,6 +16036,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -15554,6 +16048,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -15565,6 +16060,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -15576,6 +16072,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -15614,6 +16111,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打つ",
             "reading": "ぶつ",
             "sources": [
@@ -15702,6 +16200,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -15713,6 +16212,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -15724,6 +16224,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -15735,6 +16236,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -15746,6 +16248,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -15757,6 +16260,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -15795,6 +16299,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打つ",
             "reading": "うつ",
             "sources": [
@@ -15883,6 +16388,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -15894,6 +16400,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -15905,6 +16412,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -15916,6 +16424,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -15927,6 +16436,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -15938,6 +16448,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -15976,6 +16487,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打つ",
             "reading": "ぶつ",
             "sources": [
@@ -16064,6 +16576,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -16075,6 +16588,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -16086,6 +16600,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -16097,6 +16612,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -16108,6 +16624,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -16119,6 +16636,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -16152,6 +16670,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打",
             "reading": "だ",
             "sources": [
@@ -16227,6 +16746,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -16238,6 +16758,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -16249,6 +16770,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -16260,6 +16782,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -16271,6 +16794,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -16282,6 +16806,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -16293,6 +16818,7 @@
             "index": 6,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -16326,6 +16852,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打",
             "reading": "ダース",
             "sources": [
@@ -16414,6 +16941,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -16425,6 +16953,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -16436,6 +16965,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -16447,6 +16977,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -16458,6 +16989,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -16469,6 +17001,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -16480,6 +17013,7 @@
             "index": 6,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -16519,6 +17053,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打ち込む",
             "reading": "うちこむ",
             "sources": [
@@ -16774,6 +17309,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -16785,6 +17321,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -16796,6 +17333,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -16807,6 +17345,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -16818,6 +17357,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -16829,6 +17369,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -16862,6 +17403,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打ち込む",
             "reading": "ぶちこむ",
             "sources": [
@@ -16974,6 +17516,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -16985,6 +17528,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -16996,6 +17540,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -17007,6 +17552,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -17018,6 +17564,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -17029,6 +17576,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -17062,6 +17610,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打ち込む",
             "reading": "うちこむ",
             "sources": [
@@ -17317,6 +17866,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -17328,6 +17878,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -17339,6 +17890,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -17350,6 +17902,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -17361,6 +17914,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -17372,6 +17926,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -17405,6 +17960,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打ち込む",
             "reading": "ぶちこむ",
             "sources": [
@@ -17517,6 +18073,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -17528,6 +18085,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -17539,6 +18097,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -17550,6 +18109,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -17561,6 +18121,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -17572,6 +18133,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -17610,6 +18172,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打つ",
             "reading": "うつ",
             "sources": [
@@ -17698,6 +18261,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -17709,6 +18273,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -17720,6 +18285,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -17731,6 +18297,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -17742,6 +18309,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -17753,6 +18321,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -17791,6 +18360,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打つ",
             "reading": "ぶつ",
             "sources": [
@@ -17879,6 +18449,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -17890,6 +18461,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -17901,6 +18473,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -17912,6 +18485,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -17923,6 +18497,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -17934,6 +18509,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -17972,6 +18548,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打つ",
             "reading": "うつ",
             "sources": [
@@ -18060,6 +18637,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -18071,6 +18649,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -18082,6 +18661,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -18093,6 +18673,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -18104,6 +18685,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -18115,6 +18697,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -18153,6 +18736,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打つ",
             "reading": "ぶつ",
             "sources": [
@@ -18241,6 +18825,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -18252,6 +18837,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -18263,6 +18849,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -18274,6 +18861,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -18285,6 +18873,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -18296,6 +18885,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -18329,6 +18919,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打",
             "reading": "だ",
             "sources": [
@@ -18404,6 +18995,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -18415,6 +19007,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -18426,6 +19019,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -18437,6 +19031,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -18448,6 +19043,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -18459,6 +19055,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -18470,6 +19067,7 @@
             "index": 6,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -18503,6 +19101,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打",
             "reading": "ダース",
             "sources": [
@@ -18591,6 +19190,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -18602,6 +19202,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -18613,6 +19214,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -18624,6 +19226,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -18635,6 +19238,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -18646,6 +19250,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -18657,6 +19262,7 @@
             "index": 6,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -18701,6 +19307,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "読む",
             "reading": "よむ",
             "sources": [
@@ -18815,6 +19422,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "強み",
             "reading": "つよみ",
             "sources": [
@@ -18938,6 +19546,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "読む",
             "reading": "よむ",
             "sources": [
@@ -19050,6 +19659,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打ち込む",
             "reading": "うちこむ",
             "sources": [
@@ -19109,6 +19719,7 @@
           },
           {
             "index": 1,
+            "headwordIndex": 1,
             "term": "打ち込む",
             "reading": "ぶちこむ",
             "sources": [
@@ -19505,6 +20116,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -19516,6 +20128,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -19527,6 +20140,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -19538,6 +20152,7 @@
             "index": 6,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -19549,6 +20164,7 @@
             "index": 8,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -19560,6 +20176,7 @@
             "index": 10,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -19571,6 +20188,7 @@
             "index": 1,
             "headwordIndex": 1,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -19582,6 +20200,7 @@
             "index": 3,
             "headwordIndex": 1,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -19593,6 +20212,7 @@
             "index": 5,
             "headwordIndex": 1,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -19604,6 +20224,7 @@
             "index": 7,
             "headwordIndex": 1,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -19615,6 +20236,7 @@
             "index": 9,
             "headwordIndex": 1,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -19626,6 +20248,7 @@
             "index": 11,
             "headwordIndex": 1,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -19662,6 +20285,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打つ",
             "reading": "うつ",
             "sources": [
@@ -19721,6 +20345,7 @@
           },
           {
             "index": 1,
+            "headwordIndex": 1,
             "term": "打つ",
             "reading": "ぶつ",
             "sources": [
@@ -19927,6 +20552,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -19938,6 +20564,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -19949,6 +20576,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -19960,6 +20588,7 @@
             "index": 6,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -19971,6 +20600,7 @@
             "index": 8,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -19982,6 +20612,7 @@
             "index": 10,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -19993,6 +20624,7 @@
             "index": 1,
             "headwordIndex": 1,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -20004,6 +20636,7 @@
             "index": 3,
             "headwordIndex": 1,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -20015,6 +20648,7 @@
             "index": 5,
             "headwordIndex": 1,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -20026,6 +20660,7 @@
             "index": 7,
             "headwordIndex": 1,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -20037,6 +20672,7 @@
             "index": 9,
             "headwordIndex": 1,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -20048,6 +20684,7 @@
             "index": 11,
             "headwordIndex": 1,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -20085,6 +20722,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "お手前",
             "reading": "おてまえ",
             "sources": [
@@ -20243,6 +20881,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "番号",
             "reading": "ばんごう",
             "sources": [
@@ -20347,6 +20986,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "中腰",
             "reading": "ちゅうごし",
             "sources": [
@@ -20451,6 +21091,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "所業",
             "reading": "しょぎょう",
             "sources": [
@@ -20555,6 +21196,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "土木工事",
             "reading": "どぼくこうじ",
             "sources": [
@@ -20659,6 +21301,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "好き",
             "reading": "すき",
             "sources": [
@@ -20780,6 +21423,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "構造",
             "reading": "こうぞう",
             "sources": [
@@ -20926,6 +21570,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "のたまう",
             "reading": "のたまう",
             "sources": [
@@ -21011,6 +21656,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "３９",
             "reading": "さんきゅう",
             "sources": [
@@ -21082,6 +21728,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "English",
             "reading": "English",
             "sources": [
@@ -21169,6 +21816,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "ＵＳＢ",
             "reading": "ユーエスビー",
             "sources": [
@@ -21256,6 +21904,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打つ",
             "reading": "うつ",
             "sources": [
@@ -21344,6 +21993,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -21355,6 +22005,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -21366,6 +22017,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -21377,6 +22029,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -21388,6 +22041,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -21399,6 +22053,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -21432,6 +22087,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打つ",
             "reading": "うつ",
             "sources": [
@@ -21520,6 +22176,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -21531,6 +22188,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -21542,6 +22200,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -21553,6 +22212,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -21564,6 +22224,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -21575,6 +22236,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -21614,6 +22276,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打つ",
             "reading": "うつ",
             "sources": [
@@ -21702,6 +22365,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -21713,6 +22377,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -21724,6 +22389,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -21735,6 +22401,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -21746,6 +22413,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -21757,6 +22425,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -21790,6 +22459,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打つ",
             "reading": "うつ",
             "sources": [
@@ -21878,6 +22548,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -21889,6 +22560,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -21900,6 +22572,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -21911,6 +22584,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -21922,6 +22596,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -21933,6 +22608,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -21972,6 +22648,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "テキスト",
             "reading": "テキスト",
             "sources": [
@@ -22088,6 +22765,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打つ",
             "reading": "うつ",
             "sources": [
@@ -22176,6 +22854,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -22187,6 +22866,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -22198,6 +22878,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -22209,6 +22890,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -22220,6 +22902,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -22231,6 +22914,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -22265,6 +22949,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "打つ",
             "reading": "うつ",
             "sources": [
@@ -22353,6 +23038,7 @@
             "index": 0,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -22364,6 +23050,7 @@
             "index": 1,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": false,
@@ -22375,6 +23062,7 @@
             "index": 2,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -22386,6 +23074,7 @@
             "index": 3,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -22397,6 +23086,7 @@
             "index": 4,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -22408,6 +23098,7 @@
             "index": 5,
             "headwordIndex": 0,
             "dictionary": "Test Dictionary 2",
+            "frequencyMode": null,
             "dictionaryIndex": 0,
             "dictionaryAlias": "termsDictAlias",
             "hasReading": true,
@@ -22464,6 +23155,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "凄い",
             "reading": "すごい",
             "sources": [
@@ -22549,6 +23241,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "English",
             "reading": "English",
             "sources": [
@@ -22636,6 +23329,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "language",
             "reading": "language",
             "sources": [
@@ -22728,6 +23422,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "마시다",
             "reading": "마시다",
             "sources": [
@@ -22813,6 +23508,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "English",
             "reading": "English",
             "sources": [
@@ -22898,6 +23594,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "自重",
             "reading": "じちょう",
             "sources": [
@@ -22977,6 +23674,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "自重",
             "reading": "じじゅう",
             "sources": [
@@ -23062,6 +23760,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "自重",
             "reading": "じじゅう",
             "sources": [
@@ -23141,6 +23840,7 @@
         "headwords": [
           {
             "index": 0,
+            "headwordIndex": 0,
             "term": "自重",
             "reading": "じちょう",
             "sources": [
@@ -23192,6 +23892,174 @@
             ],
             "entries": [
               "jichou definition"
+            ]
+          }
+        ],
+        "pronunciations": [],
+        "frequencies": []
+      }
+    ]
+  },
+  {
+    "name": "Longer match first (PR#1075)",
+    "originalTextLength": 9,
+    "dictionaryEntries": [
+      {
+        "type": "term",
+        "isPrimary": true,
+        "textProcessorRuleChainCandidates": [
+          []
+        ],
+        "inflectionRuleChainCandidates": [
+          {
+            "source": "dictionary",
+            "inflectionRules": [
+              {
+                "name": "genitive plural"
+              }
+            ]
+          }
+        ],
+        "score": 5,
+        "frequencyOrder": 0,
+        "dictionaryIndex": 0,
+        "dictionaryAlias": "termsDictAlias",
+        "sourceTermExactMatchCount": 1,
+        "matchPrimaryReading": false,
+        "maxOriginalTextLength": 9,
+        "headwords": [
+          {
+            "index": 0,
+            "headwordIndex": 0,
+            "term": "oppidum",
+            "reading": "oppidum",
+            "sources": [
+              {
+                "originalText": "oppidorum",
+                "transformedText": "oppidorum",
+                "deinflectedText": "oppidum",
+                "matchType": "exact",
+                "matchSource": "term",
+                "isPrimary": true
+              }
+            ],
+            "tags": [],
+            "wordClasses": [
+              "n2s"
+            ]
+          }
+        ],
+        "definitions": [
+          {
+            "index": 0,
+            "headwordIndices": [
+              0
+            ],
+            "dictionary": "Test Dictionary 2",
+            "dictionaryIndex": 0,
+            "dictionaryAlias": "termsDictAlias",
+            "id": 34,
+            "score": 5,
+            "frequencyOrder": 0,
+            "sequences": [
+              26
+            ],
+            "isPrimary": true,
+            "tags": [
+              {
+                "name": "n",
+                "category": "partOfSpeech",
+                "order": 0,
+                "score": 0,
+                "content": [
+                  "noun"
+                ],
+                "dictionaries": [
+                  "Test Dictionary 2"
+                ],
+                "redundant": false
+              }
+            ],
+            "entries": [
+              "oppidum definition - town"
+            ]
+          }
+        ],
+        "pronunciations": [],
+        "frequencies": []
+      },
+      {
+        "type": "term",
+        "isPrimary": true,
+        "textProcessorRuleChainCandidates": [
+          []
+        ],
+        "inflectionRuleChainCandidates": [
+          {
+            "source": "algorithm",
+            "inflectionRules": []
+          }
+        ],
+        "score": 5,
+        "frequencyOrder": 0,
+        "dictionaryIndex": 0,
+        "dictionaryAlias": "termsDictAlias",
+        "sourceTermExactMatchCount": 1,
+        "matchPrimaryReading": false,
+        "maxOriginalTextLength": 6,
+        "headwords": [
+          {
+            "index": 0,
+            "headwordIndex": 0,
+            "term": "oppido",
+            "reading": "oppidō",
+            "sources": [
+              {
+                "originalText": "oppido",
+                "transformedText": "oppido",
+                "deinflectedText": "oppido",
+                "matchType": "exact",
+                "matchSource": "term",
+                "isPrimary": true
+              }
+            ],
+            "tags": [],
+            "wordClasses": [
+              "adv"
+            ]
+          }
+        ],
+        "definitions": [
+          {
+            "index": 0,
+            "headwordIndices": [
+              0
+            ],
+            "dictionary": "Test Dictionary 2",
+            "dictionaryIndex": 0,
+            "dictionaryAlias": "termsDictAlias",
+            "id": 35,
+            "score": 5,
+            "frequencyOrder": 0,
+            "sequences": [
+              27
+            ],
+            "isPrimary": true,
+            "tags": [
+              {
+                "name": "adv",
+                "category": "default",
+                "order": 0,
+                "score": 0,
+                "content": [],
+                "dictionaries": [
+                  "Test Dictionary 2"
+                ],
+                "redundant": false
+              }
+            ],
+            "entries": [
+              "oppido definition - very"
             ]
           }
         ],

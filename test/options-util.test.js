@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023-2025  Yomitan Authors
+ * Copyright (C) 2023-2026  Yomitan Authors
  * Copyright (C) 2020-2022  Yomichan Authors
  *
  * This program is free software: you can redistribute it and/or modify
@@ -90,6 +90,7 @@ function createProfileOptionsTestData1() {
             maxResults: 32,
             showAdvanced: false,
             popupDisplayMode: 'default',
+            popupFullWidthPosition: 'bottom',
             popupWidth: 400,
             popupHeight: 250,
             popupHorizontalOffset: 0,
@@ -322,6 +323,7 @@ function createProfileOptionsUpdatedTestData1() {
             showAdvanced: false,
             showDebug: false,
             popupDisplayMode: 'default',
+            popupFullWidthPosition: 'bottom',
             popupWidth: 400,
             popupHeight: 250,
             popupHorizontalOffset: 0,
@@ -339,8 +341,8 @@ function createProfileOptionsUpdatedTestData1() {
             averageFrequency: false,
             glossaryLayoutMode: 'default',
             mainDictionary: '',
-            popupTheme: 'light',
-            popupOuterTheme: 'light',
+            popupTheme: 'dark',
+            popupOuterTheme: 'dark',
             customPopupCss: '',
             customPopupOuterCss: '',
             enableWanakana: true,
@@ -595,6 +597,7 @@ function createProfileOptionsUpdatedTestData1() {
             apiKey: '',
             downloadTimeout: 0,
             forceSync: false,
+            noteDupeCheckFirst: false,
         },
         sentenceParsing: {
             scanExtent: 200,
@@ -751,7 +754,7 @@ function createOptionsUpdatedTestData1() {
             },
         ],
         profileCurrent: 0,
-        version: 75,
+        version: 77,
         global: {
             database: {
                 prefixWildcardsSupported: false,
@@ -790,6 +793,63 @@ describe('OptionsUtil', () => {
         const optionsUpdated = structuredClone(await optionsUtil.update(options));
         const optionsExpected = createOptionsUpdatedTestData1();
         expect(optionsUpdated).toStrictEqual(optionsExpected);
+    });
+
+    test('UpdateVersion75KeepsGsmAndUpstreamPopupMigrations', async () => {
+        const optionsUtil = new OptionsUtil();
+        await optionsUtil.prepare();
+
+        const options = structuredClone(optionsUtil.getDefault());
+        options.version = 75;
+        const general = options.profiles[0].options.general;
+        general.useSecurePopupFrameUrl = true;
+        general.usePopupShadowDom = true;
+        general.popupTheme = 'light';
+        general.popupOuterTheme = 'light';
+        Reflect.deleteProperty(general, 'popupFullWidthPosition');
+        options.profiles.push(structuredClone(options.profiles[0]));
+
+        const optionsUpdated = await optionsUtil.update(options);
+        expect(optionsUpdated.version).toBe(77);
+        for (const profile of optionsUpdated.profiles) {
+            expect(profile.options.general).toMatchObject({
+                useSecurePopupFrameUrl: false,
+                usePopupShadowDom: false,
+                popupTheme: 'dark',
+                popupOuterTheme: 'dark',
+                popupFullWidthPosition: 'bottom',
+            });
+        }
+    });
+
+    test('UpdateLegacyGsmVersion76PreservesPreferencesAndAddsUpstreamSettings', async () => {
+        const optionsUtil = new OptionsUtil();
+        await optionsUtil.prepare();
+
+        const options = structuredClone(optionsUtil.getDefault());
+        options.version = 76;
+        const {general, anki} = options.profiles[0].options;
+        general.popupTheme = 'light';
+        general.popupOuterTheme = 'light';
+        general.customPopupCss = 'body { color: #f00; }';
+        Reflect.deleteProperty(general, 'popupFullWidthPosition');
+        const customTemplate = '{{~#*inline "gsm-custom"~}}Custom field{{~/inline~}}';
+        anki.fieldTemplates = customTemplate;
+
+        const optionsUpdated = await optionsUtil.update(options);
+        expect(optionsUpdated.version).toBe(77);
+        expect(optionsUpdated.profiles[0].options.general).toMatchObject({
+            useSecurePopupFrameUrl: false,
+            usePopupShadowDom: false,
+            popupTheme: 'light',
+            popupOuterTheme: 'light',
+            customPopupCss: general.customPopupCss,
+            popupFullWidthPosition: 'bottom',
+        });
+        const partials = getHandlebarsPartials(optionsUpdated.profiles[0].options.anki.fieldTemplates || '');
+        expect(partials.get('gsm-custom')).toBe(customTemplate);
+        expect(partials.get('url-plain')).toContain('{{definition.url}}');
+        expect(await optionsUtil.update(structuredClone(optionsUpdated))).toStrictEqual(optionsUpdated);
     });
 
     test('CumulativeFieldTemplatesUpdates', async () => {
@@ -831,7 +891,7 @@ describe('OptionsUtil', () => {
         const options = structuredClone(optionsUtil.getDefault());
         const customPopupCss = 'body { color: #f00; }';
         const customPopupOuterCss = 'iframe.yomitan-popup { border: 2px solid red; }';
-        options.version = 75;
+        options.version = 76;
         options.profiles[0].options.general.customPopupCss = customPopupCss;
         options.profiles[0].options.general.customPopupOuterCss = customPopupOuterCss;
 
@@ -2135,6 +2195,77 @@ describe('OptionsUtil', () => {
             </li>
         {{~/each~}}
         </ul>
+    {{~/if~}}
+{{/inline}}
+`.trimStart(),
+            },
+            {
+                oldVersion: 74,
+                newVersion: 75,
+                old: `
+{{#*inline "frequency-harmonic-rank"}}
+    {{~#if (op "===" definition.frequencyHarmonic -1) ~}}
+        9999999
+    {{~else ~}}
+        {{definition.frequencyHarmonic}}
+    {{~/if~}}
+{{/inline}}
+
+{{#*inline "frequency-harmonic-occurrence"}}
+    {{~#if (op "===" definition.frequencyHarmonic -1) ~}}
+        0
+    {{~else ~}}
+        {{definition.frequencyHarmonic}}
+    {{~/if~}}
+{{/inline}}
+
+{{#*inline "frequency-average-rank"}}
+    {{~#if (op "===" definition.frequencyAverage -1) ~}}
+        9999999
+    {{~else ~}}
+        {{definition.frequencyAverage}}
+    {{~/if~}}
+{{/inline}}
+
+{{#*inline "frequency-average-occurrence"}}
+    {{~#if (op "===" definition.frequencyAverage -1) ~}}
+        0
+    {{~else ~}}
+        {{definition.frequencyAverage}}
+    {{~/if~}}
+{{/inline}}
+`.trimStart(),
+
+                expected: `
+{{#*inline "frequency-harmonic-rank"}}
+    {{~#if (op "===" definition.frequencyHarmonicRank -1) ~}}
+        9999999
+    {{~else ~}}
+        {{definition.frequencyHarmonicRank}}
+    {{~/if~}}
+{{/inline}}
+
+{{#*inline "frequency-harmonic-occurrence"}}
+    {{~#if (op "===" definition.frequencyHarmonicOccurrence -1) ~}}
+        0
+    {{~else ~}}
+        {{definition.frequencyHarmonicOccurrence}}
+    {{~/if~}}
+{{/inline}}
+
+{{#*inline "frequency-average-rank"}}
+    {{~#if (op "===" definition.frequencyAverageRank -1) ~}}
+        9999999
+    {{~else ~}}
+        {{definition.frequencyAverageRank}}
+    {{~/if~}}
+{{/inline}}
+
+{{#*inline "frequency-average-occurrence"}}
+    {{~#if (op "===" definition.frequencyAverageOccurrence -1) ~}}
+        0
+    {{~else ~}}
+        {{definition.frequencyAverageOccurrence}}
     {{~/if~}}
 {{/inline}}
 `.trimStart(),

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024-2025  Yomitan Authors
+ * Copyright (C) 2024-2026  Yomitan Authors
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -72,11 +72,11 @@ const conditions = {
         subConditions: ['np', 'ns'],
     },
     np: {
-        name: 'Noun, plural',
+        name: 'Noun plural',
         isDictionaryForm: false,
     },
     ns: {
-        name: 'Noun, singular',
+        name: 'Noun singular',
         isDictionaryForm: true,
     },
     adj: {

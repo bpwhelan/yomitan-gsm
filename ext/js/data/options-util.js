@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023-2025  Yomitan Authors
+ * Copyright (C) 2023-2026  Yomitan Authors
  * Copyright (C) 2016-2022  Yomichan Authors
  *
  * This program is free software: you can redistribute it and/or modify
@@ -612,6 +612,8 @@ export class OptionsUtil {
             this._updateVersion73,
             this._updateVersion74,
             this._updateVersion75,
+            this._updateVersion76,
+            this._updateVersion77,
         ];
         /* eslint-enable @typescript-eslint/unbound-method */
         if (typeof targetVersion === 'number' && targetVersion < result.length) {
@@ -1859,14 +1861,45 @@ export class OptionsUtil {
 
     /**
      *  - Forced security popup options to disabled for all profiles.
+     *  - Forced popup Body/Shadow themes to dark (required by GSM's glass overlay CSS).
      *  @type {import('options-util').UpdateFunction}
      */
-    async _updateVersion75(options) {
+    async _updateVersion76_GSM(options) {
         for (const profile of options.profiles) {
             const {general} = profile.options;
             general.useSecurePopupFrameUrl = false;
             general.usePopupShadowDom = false;
+            general.popupTheme = 'dark';
+            general.popupOuterTheme = 'dark';
         }
+    }
+
+    /**
+     *  - Split rank-based and occurrence-based frequency field templates.
+     *  @type {import('options-util').UpdateFunction}
+     */
+    async _updateVersion75(options) {
+        await this._applyAnkiFieldTemplatesPatch(options, '/data/templates/anki-field-templates-upgrade-v75.handlebars');
+    }
+
+    /**
+     * - Added general.popupFullWidthPosition.
+     * @type {import('options-util').UpdateFunction}
+     */
+    async _updateVersion76(options) {
+        // GSM already used version 76; share this step to keep upstream migration numbers stable.
+        await this._updateVersion76_GSM(options);
+        for (const profile of options.profiles) {
+            profile.options.general.popupFullWidthPosition = 'bottom';
+        }
+    }
+
+    /**
+     *  - Add {url-plain} handlebar
+     *  @type {import('options-util').UpdateFunction}
+     */
+    async _updateVersion77(options) {
+        await this._applyAnkiFieldTemplatesPatch(options, '/data/templates/anki-field-templates-upgrade-v77.handlebars');
     }
 
     /**

@@ -21,8 +21,8 @@ jobs:
         run: npm ci
       - name: Build Legal
         run: npm run license-report:html
-      - uses: lycheeverse/lychee-action@v2.6.1
+      - uses: lycheeverse/lychee-action@v2.8.0
         with:
           fail: true
           jobSummary: false
-          args: --exclude-path 'node_modules' --verbose --no-progress './**/*.md' './**/*.html' './**/*.rst'
+          args: --exclude-path 'node_modules' --root-dir '${{ github.workspace }}/ext' --verbose --no-progress './**/*.md' './**/*.html' './**/*.rst'

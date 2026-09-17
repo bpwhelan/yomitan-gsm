@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024-2025  Yomitan Authors
+ * Copyright (C) 2024-2026  Yomitan Authors
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -89,13 +89,13 @@ const conditions = {
     v: {
         name: 'Verb',
         isDictionaryForm: true,
-        subConditions: ['vw', 'vs'],
+        subConditions: ['vw', 'vst'],
     },
     vw: {
         name: 'Weak verb',
         isDictionaryForm: true,
     },
-    vs: {
+    vst: {
         name: 'Strong verb',
         isDictionaryForm: true,
     },

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024-2025  Yomitan Authors
+ * Copyright (C) 2024-2026  Yomitan Authors
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -282,10 +282,10 @@ export const englishTransforms = {
             name: '-able',
             description: 'Adjective formed from a verb',
             rules: [
-                suffixInflection('able', '', ['v'], ['adj']),
-                suffixInflection('able', 'e', ['v'], ['adj']),
-                suffixInflection('iable', 'y', ['v'], ['adj']),
-                ...doubledConsonantInflection('bdgklmnprstz', 'able', ['v'], ['adj']),
+                suffixInflection('able', '', ['adj'], ['v']),
+                suffixInflection('able', 'e', ['adj'], ['v']),
+                suffixInflection('iable', 'y', ['adj'], ['v']),
+                ...doubledConsonantInflection('bdgklmnprstz', 'able', ['adj'], ['v']),
             ],
         },
     },

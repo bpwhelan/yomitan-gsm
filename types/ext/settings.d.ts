@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023-2025  Yomitan Authors
+ * Copyright (C) 2023-2026  Yomitan Authors
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -122,6 +122,7 @@ export type GeneralOptions = {
     fontSize: number;
     lineHeight: string;
     popupDisplayMode: PopupDisplayMode;
+    popupFullWidthPosition: PopupFullWidthPosition;
     popupWidth: number;
     popupHeight: number;
     popupHorizontalOffset: number;
@@ -301,6 +302,7 @@ export type ParsingOptions = {
     selectedParser: string | null;
     termSpacing: boolean;
     readingMode: ParsingReadingMode;
+    useAllFrequencyDictionaries: boolean;
 };
 
 export type AnkiOptions = {
@@ -321,6 +323,7 @@ export type AnkiOptions = {
     apiKey: string;
     downloadTimeout: number;
     forceSync: boolean;
+    noteDupeCheckFirst: boolean;
 };
 
 export type AnkiScreenshotOptions = {
@@ -402,6 +405,8 @@ export type ResultOutputMode = 'group' | 'merge' | 'split' | 'term';
 
 export type PopupDisplayMode = 'default' | 'full-width';
 
+export type PopupFullWidthPosition = 'top' | 'above-cursor' | 'bottom';
+
 export type PopupHorizontalTextPosition = 'below' | 'above';
 
 export type PopupVerticalTextPosition = 'default' | 'before' | 'after' | 'left' | 'right';
@@ -418,7 +423,7 @@ export type PopupActionBarVisibility = 'auto' | 'always';
 
 export type PopupActionBarLocation = 'left' | 'right' | 'top' | 'bottom';
 
-export type FrequencyDisplayMode = 'tags' | 'tags-grouped' | 'split-tags' | 'split-tags-grouped' | 'inline-list' | 'list';
+export type FrequencyDisplayMode = 'tags' | 'tags-grouped' | 'split-tags' | 'split-tags-grouped' | 'inline-list' | 'list' | 'list-bordered';
 
 export type TermDisplayMode = 'ruby' | 'ruby-and-reading' | 'term-and-reading' | 'term-only';
 

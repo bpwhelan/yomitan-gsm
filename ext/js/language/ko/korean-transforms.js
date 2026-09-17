@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024-2025  Yomitan Authors
+ * Copyright (C) 2024-2026  Yomitan Authors
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -19,7 +19,7 @@ import {suffixInflection} from '../language-transforms.js';
 
 const conditions = {
     v: {
-        name: 'Verb or Auxiliary Verb',
+        name: 'Verb',
         isDictionaryForm: true,
         i18n: [
             {
@@ -29,7 +29,7 @@ const conditions = {
         ],
     },
     adj: {
-        name: 'Adjective or Auxiliary Adjective',
+        name: 'Adjective',
         isDictionaryForm: true,
         i18n: [
             {

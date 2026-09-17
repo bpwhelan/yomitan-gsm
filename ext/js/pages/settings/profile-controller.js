@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023-2025  Yomitan Authors
+ * Copyright (C) 2023-2026  Yomitan Authors
  * Copyright (C) 2020-2022  Yomichan Authors
  *
  * This program is free software: you can redistribute it and/or modify
@@ -431,7 +431,10 @@ export class ProfileController {
 
         // Update UI
         this._updateProfileSelectOptions();
-        void this.setDefaultProfile(profileCurrent);
+
+        if (this._settingsController.profileIndex !== profileCurrent) {
+            void this.setDefaultProfile(profileCurrent);
+        }
 
         /** @type {HTMLSelectElement} */ (this._profileActiveSelect).value = `${profileCurrent}`;
 

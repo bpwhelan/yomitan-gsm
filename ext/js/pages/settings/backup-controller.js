@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023-2025  Yomitan Authors
+ * Copyright (C) 2023-2026  Yomitan Authors
  * Copyright (C) 2019-2022  Yomichan Authors
  *
  * This program is free software: you can redistribute it and/or modify
@@ -22,6 +22,7 @@ import {parseJson} from '../../core/json.js';
 import {log} from '../../core/log.js';
 import {isObjectNotArray} from '../../core/object-utilities.js';
 import {toError} from '../../core/to-error.js';
+import {isLocalhostUrl} from '../../core/utilities.js';
 import {arrayBufferUtf8Decode} from '../../data/array-buffer-util.js';
 import {OptionsUtil} from '../../data/options-util.js';
 import {getAllPermissions} from '../../data/permissions-util.js';
@@ -326,30 +327,6 @@ export class BackupController {
     }
 
     /**
-     * @param {string} urlString
-     * @returns {boolean}
-     */
-    _isLocalhostUrl(urlString) {
-        try {
-            const url = new URL(urlString);
-            switch (url.hostname.toLowerCase()) {
-                case 'localhost':
-                case '127.0.0.1':
-                case '[::1]':
-                    switch (url.protocol.toLowerCase()) {
-                        case 'http:':
-                        case 'https:':
-                            return true;
-                    }
-                    break;
-            }
-        } catch (e) {
-            // NOP
-        }
-        return false;
-    }
-
-    /**
      * @param {import('settings').ProfileOptions} options
      * @param {boolean} dryRun
      * @returns {string[]}
@@ -367,7 +344,7 @@ export class BackupController {
                 }
             }
             const server = anki.server;
-            if (typeof server === 'string' && server.length > 0 && !this._isLocalhostUrl(server)) {
+            if (typeof server === 'string' && server.length > 0 && !isLocalhostUrl(server)) {
                 warnings.push('anki.server uses a non-localhost URL');
                 if (!dryRun) {
                     anki.server = 'http://127.0.0.1:8765';
@@ -383,7 +360,7 @@ export class BackupController {
                     const source = sources[i];
                     if (!isObjectNotArray(source)) { continue; }
                     const {url} = source;
-                    if (typeof url === 'string' && url.length > 0 && !this._isLocalhostUrl(url)) {
+                    if (typeof url === 'string' && url.length > 0 && !isLocalhostUrl(url)) {
                         warnings.push(`audio.sources[${i}].url uses a non-localhost URL`);
                         if (!dryRun) {
                             sources[i].url = '';

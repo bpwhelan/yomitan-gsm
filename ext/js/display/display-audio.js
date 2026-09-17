@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023-2025  Yomitan Authors
+ * Copyright (C) 2023-2026  Yomitan Authors
  * Copyright (C) 2021-2022  Yomichan Authors
  *
  * This program is free software: you can redistribute it and/or modify
@@ -32,7 +32,7 @@ export class DisplayAudio {
         /** @type {?import('display-audio').GenericAudio} */
         this._audioPlaying = null;
         /** @type {AudioSystem} */
-        this._audioSystem = new AudioSystem();
+        this._audioSystem = new AudioSystem(this._display.application.api);
         /** @type {number} */
         this._playbackVolume = 1;
         /** @type {boolean} */

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2023-2025  Yomitan Authors
+ * Copyright (C) 2023-2026  Yomitan Authors
  * Copyright (C) 2020-2022  Yomichan Authors
  *
  * This program is free software: you can redistribute it and/or modify
@@ -153,10 +153,10 @@ export class PermissionsToggleController {
 
     /**
      * @param {HTMLInputElement} toggle
-     * @returns {string[]}
+     * @returns {chrome.runtime.ManifestPermission[]}
      */
     _getRequiredPermissions(toggle) {
         const requiredPermissions = toggle.dataset.requiredPermissions;
-        return (typeof requiredPermissions === 'string' && requiredPermissions.length > 0 ? requiredPermissions.split(' ') : []);
+        return /** @type {chrome.runtime.ManifestPermission[]} */ (typeof requiredPermissions === 'string' && requiredPermissions.length > 0 ? requiredPermissions.split(' ') : []);
     }
 }

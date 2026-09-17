@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024-2025  Yomitan Authors
+ * Copyright (C) 2024-2026  Yomitan Authors
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -63,6 +63,7 @@ export function getStandardFieldMarkers(type, language = 'ja') {
                 'sentence-furigana-plain',
                 'tags',
                 'url',
+                'url-plain',
             ];
             if (language === 'ja') {
                 markers.push(
@@ -105,6 +106,7 @@ export function getStandardFieldMarkers(type, language = 'ja') {
                 'stroke-count',
                 'tags',
                 'url',
+                'url-plain',
             ];
         default:
             throw new Error(`Unsupported type: ${type}`);
