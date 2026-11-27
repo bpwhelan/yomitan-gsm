@@ -21,6 +21,7 @@ import { DynamicProperty } from '../core/dynamic-property.js';
 import { EventDispatcher } from '../core/event-dispatcher.js';
 import { EventListenerCollection } from '../core/event-listener-collection.js';
 import { ExtensionError } from '../core/extension-error.js';
+import {log} from '../core/log.js';
 import { safePerformance } from '../core/safe-performance.js';
 import { deepEqual } from '../core/utilities.js';
 import { addFullscreenChangeEventListener, computeZoomScale, convertRectZoomCoordinates, getFullscreenElement } from '../dom/document-util.js';
@@ -60,6 +61,8 @@ export class Popup extends EventDispatcher {
         this._injectPromise = null;
         /** @type {boolean} */
         this._injectPromiseComplete = false;
+        /** @type {number} */
+        this._showContentToken = 0;
         /** @type {DynamicProperty<boolean>} */
         this._visible = new DynamicProperty(false);
         /** @type {boolean} */
@@ -117,6 +120,7 @@ export class Popup extends EventDispatcher {
         this._frame.className = 'yomitan-popup';
         this._frame.style.width = '0';
         this._frame.style.height = '0';
+        this._frame.style.setProperty('visibility', 'hidden', 'important');
         /** @type {boolean} */
         this._frameConnected = false;
         /** @type {boolean} */
@@ -238,6 +242,9 @@ export class Popup extends EventDispatcher {
      * @param {boolean} changeFocus Whether or not the parent popup or host frame should be focused.
      */
     hide(changeFocus) {
+        // A cold popup can still be preparing its frame while auto-hide runs.
+        // Cancel that show even when the frame has not become visible yet.
+        this._showContentToken += 1;
         if (!this.isVisibleSync()) {
             return;
         }
@@ -335,15 +342,18 @@ export class Popup extends EventDispatcher {
     async showContent(details, displayDetails) {
         if (this._optionsContext === null) { throw new Error('Options not assigned'); }
 
+        const token = ++this._showContentToken;
         const {optionsContext, sourceRects, writingMode} = details;
         if (optionsContext !== null) {
             await this._setOptionsContextIfDifferent(optionsContext);
         }
+        if (token !== this._showContentToken) { return; }
 
         // If there's already a timer running on the same popup from a previous lookup, reset it
         this.stopHideDelayed();
 
-        await this._show(sourceRects, writingMode);
+        await this._show(sourceRects, writingMode, token);
+        if (token !== this._showContentToken) { return; }
 
         if (displayDetails !== null) {
             safePerformance.mark('invokeDisplaySetContent:start');
@@ -701,10 +711,11 @@ export class Popup extends EventDispatcher {
     /**
      * @param {import('popup').Rect[]} sourceRects
      * @param {import('document-util').NormalizedWritingMode} writingMode
+     * @param {number} token
      */
-    async _show(sourceRects, writingMode) {
+    async _show(sourceRects, writingMode, token) {
         const injected = await this._inject();
-        if (!injected) { return; }
+        if (!injected || token !== this._showContentToken) { return; }
 
         const viewport = this._getViewport(this._scaleRelativeToVisualViewport);
         let {left, top, width, height, after, below} = this._getPosition(sourceRects, writingMode, viewport);
@@ -1158,6 +1169,13 @@ export class Popup extends EventDispatcher {
         this._hidePopupOnCursorExit = scanning.hidePopupOnCursorExit;
         this._hidePopupOnCursorExitDelay = scanning.hidePopupOnCursorExitDelay;
         void this.updateTheme();
+
+        // The first WebView2 popup can take seconds to load and connect. Start
+        // the same hidden frame that showContent will use when the scan arrives.
+        const preload = typeof document.documentElement.dataset.gsmPreloadDictionaryPopup !== 'undefined';
+        if (preload && general.enable && this._depth === 0 && window === window.top && this._injectPromise === null) {
+            void this._inject().catch((error) => log.error(error));
+        }
     }
 
     /**

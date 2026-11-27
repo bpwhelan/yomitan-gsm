@@ -27,6 +27,7 @@ Write-Host "Building Chrome package..."
 Push-Location $RepoRoot
 try {
     npm run build -- --target chrome --version $ManifestVersion
+    if ($LASTEXITCODE -ne 0) { throw "Yomitan build failed with exit code $LASTEXITCODE" }
 } finally {
     Pop-Location
 }
@@ -39,9 +40,17 @@ Write-Host "Extracting build zip..."
 New-Item -ItemType Directory -Path $TempExtractPath | Out-Null
 try {
     Expand-Archive -LiteralPath $BuildZipPath -DestinationPath $TempExtractPath -Force
+    # GSM serves these fonts on demand. Leave them in the browser extension build.
+    foreach ($font in @("data/fonts/kanji-stroke-orders.ttf", "fonts/NotoSansJP-Regular.ttf")) {
+        $fontPath = Join-Path $TempExtractPath $font
+        if (Test-Path -LiteralPath $fontPath -PathType Leaf) {
+            Remove-Item -LiteralPath $fontPath
+        }
+    }
 
     Write-Host "Updating destination: $DestinationPath"
     New-Item -ItemType Directory -Path $DestinationPath -Force | Out-Null
+    if ((Resolve-Path -LiteralPath $DestinationPath).Path -ne "C:\Users\Beangate\GSM\GameSentenceMiner\GSM_Overlay\yomitan") { throw "Unexpected vendor destination" }
     Get-ChildItem -LiteralPath $DestinationPath -Force | Remove-Item -Recurse -Force
     Copy-Item -Path (Join-Path $TempExtractPath "*") -Destination $DestinationPath -Recurse -Force
 
@@ -57,6 +66,9 @@ try {
 } finally {
     Write-Host "Cleaning up temp files..."
     if (Test-Path -LiteralPath $TempExtractPath) {
+        $ResolvedExtractPath = (Resolve-Path -LiteralPath $TempExtractPath).Path
+        $ExpectedTempRoot = [System.IO.Path]::GetFullPath([System.IO.Path]::GetTempPath()).TrimEnd('\') + '\'
+        if (-not $ResolvedExtractPath.StartsWith($ExpectedTempRoot, [System.StringComparison]::OrdinalIgnoreCase) -or (Split-Path -Leaf $ResolvedExtractPath) -notmatch '^yomitan-chrome-build-[0-9a-f]{32}$') { throw "Unexpected extraction directory" }
         Remove-Item -LiteralPath $TempExtractPath -Recurse -Force
     }
 }
