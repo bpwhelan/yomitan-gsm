@@ -29,8 +29,16 @@ function setup() {
     const termsFind = vi.fn((/** @type {{text: string}} */ {text}) => ({dictionaryEntries: [{text}]}));
     const kanjiFind = vi.fn((/** @type {{text: string}} */ {text}) => [{text}]);
     const parseText = vi.fn(() => [{content: '猫'}]);
+    const options = {
+        anki: {cardFormats: formats},
+        dictionaries: [{name: 'Test', alias: 'Alias', enabled: true, definitionsCollapsible: 'collapsed'}],
+        general: {language: 'ja'},
+        scanning: {enableSearchTags: true},
+    };
     const api = new YomitanApi(createApiMap([
-        ['optionsGetFull', () => ({profileCurrent: 1, profiles: [{options: {anki: {cardFormats: []}}}, {options: {anki: {cardFormats: formats}}}]})],
+        ['optionsGetFull', () => ({profileCurrent: 1, profiles: [{options: {anki: {cardFormats: []}}}, {options}]})],
+        ['getDictionaryInfo', () => [{title: 'Test'}, {title: 'Other'}]],
+        ['getMedia', (/** @type {{targets: object[]}} */ {targets}) => targets],
         ['termsFind', termsFind],
         ['kanjiFind', kanjiFind],
         ['parseText', parseText],
@@ -79,6 +87,21 @@ describe('GSM bridge shares the native API dispatch without a native port', () =
         const {api, formats} = setup();
         await expect(api.invokeBridgeAction('ankiCardFormats', {})).resolves.toEqual({data: formats, responseStatusCode: 200});
         await expect(api.invokeBridgeAction('ankiCardFormats', {profileIndex: 0})).resolves.toEqual({data: [], responseStatusCode: 200});
+    });
+
+    test('exposes the upstream dictionary metadata, display options and media through the bridge', async () => {
+        const {api} = setup();
+        await expect(api.invokeBridgeAction('dictionaryInfo')).resolves.toMatchObject({
+            responseStatusCode: 200,
+            data: [{title: 'Test', options: {alias: 'Alias', enabled: true}}, {title: 'Other', options: null}],
+        });
+        await expect(api.invokeBridgeAction('displayOptions')).resolves.toMatchObject({
+            responseStatusCode: 200,
+            data: {general: {language: 'ja'}, scanning: {enableSearchTags: true}},
+        });
+        const targets = [{dictionary: 'Test', path: 'image.png'}];
+        await expect(api.invokeBridgeAction('dictionaryMedia', {targets})).resolves.toEqual({data: targets, responseStatusCode: 200});
+        await expect(api.invokeBridgeAction('dictionaryMedia', {})).rejects.toThrow('targets');
     });
 
     test('rejects malformed bodies and unsupported actions', async () => {

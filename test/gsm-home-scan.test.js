@@ -24,10 +24,11 @@ afterEach(() => vi.unstubAllGlobals());
 
 /**
  * @param {boolean} home
+ * @param {string} modifier
  * @returns {TextScanner}
  */
-function setup(home = true) {
-    vi.stubGlobal('document', {elementFromPoint: () => ({closest: () => (home ? {} : null)})});
+function setup(home = true, modifier = 'shift') {
+    vi.stubGlobal('document', {elementFromPoint: () => ({closest: () => (home ? {getAttribute: () => modifier} : null)})});
     const scanner = new TextScanner(/** @type {import('text-scanner').ConstructorDetails} */ ({}));
     scanner._lastMouseMove = {clientX: 10, clientY: 20};
     scanner._inputs = [{include: ['alt'], exclude: [], types: new Set(['mouse']), searchTerms: true}];
@@ -49,6 +50,13 @@ test('Home Shift overrides a different configured modifier without changing sett
     expect(scanner._inputs[0].include).toEqual(['alt']);
     expect(scanner._modifierKeySet(['shift'])).toBe(true);
     expect(scanner._modifierKeySet(['alt'])).toBe(false);
+});
+
+test('Home follows the selected modifier for a stationary pointer', () => {
+    const scanner = setup(true, 'ctrl');
+    expect(scanner._modifierKeySet(['ctrl'])).toBe(true);
+    expect(scanner._modifierKeySet(['shift'])).toBe(false);
+    expect(scanner._getMatchingInputGroupFromEvent('mouse', 'mouseMove', {clientX: 10, clientY: 20, buttons: 0, ctrlKey: true})).not.toBeNull();
 });
 
 test('Home text selection does not trigger a lookup while dragging', () => {

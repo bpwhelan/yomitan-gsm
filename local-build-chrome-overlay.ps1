@@ -1,23 +1,22 @@
+param([string]$GsmRoot = (Join-Path $PSScriptRoot '..\GameSentenceMiner'))
+
 $ErrorActionPreference = "Stop"
 
 $RepoRoot = Split-Path -Parent $MyInvocation.MyCommand.Path
 $BuildZipPath = Join-Path $RepoRoot "builds\yomitan-chrome.zip"
-$DestinationPath = "C:\Users\Beangate\GSM\GameSentenceMiner\GSM_Overlay\yomitan"
+$OverlayRoot = (Resolve-Path -LiteralPath (Join-Path $GsmRoot 'GSM_Overlay')).Path
+$DestinationPath = Join-Path $OverlayRoot 'yomitan'
+if (-not (Test-Path -LiteralPath (Join-Path $DestinationPath 'manifest.json') -PathType Leaf)) {
+    throw "Expected an existing GSM extension in $DestinationPath"
+}
+if ((Get-Item -LiteralPath $DestinationPath).Attributes -band [IO.FileAttributes]::ReparsePoint) {
+    throw "Unexpected linked extension destination: $DestinationPath"
+}
 $TempExtractPath = Join-Path ([System.IO.Path]::GetTempPath()) ("yomitan-chrome-build-" + [System.Guid]::NewGuid().ToString("N"))
-$LatestReleaseApi = "https://api.github.com/repos/yomidevs/yomitan/releases/latest"
-
-Write-Host "Fetching latest Yomitan release tag..."
-$LatestRelease = Invoke-RestMethod -Uri $LatestReleaseApi -Headers @{
-    Accept = "application/vnd.github+json"
-    "User-Agent" = "yomitan-gsm-local-build-script"
-}
-$LatestTag = $LatestRelease.tag_name
-if ([string]::IsNullOrWhiteSpace($LatestTag)) {
-    throw "Unable to determine latest release tag from $LatestReleaseApi"
-}
+$LatestTag = git -C $RepoRoot tag --merged HEAD --list '[0-9]*' --sort=-version:refname | Select-Object -First 1
+if ([string]::IsNullOrWhiteSpace($LatestTag)) { throw "No upstream release tag found in this checkout" }
 
 $ManifestVersion = $LatestTag -replace "^[^\d]*", ""
-# $ManifestVersion = "0.0.0.0"
 if ($ManifestVersion -notmatch "^\d+(\.\d+){0,3}$") {
     throw "Latest tag '$LatestTag' cannot be converted to a valid extension version."
 }
@@ -50,7 +49,6 @@ try {
 
     Write-Host "Updating destination: $DestinationPath"
     New-Item -ItemType Directory -Path $DestinationPath -Force | Out-Null
-    if ((Resolve-Path -LiteralPath $DestinationPath).Path -ne "C:\Users\Beangate\GSM\GameSentenceMiner\GSM_Overlay\yomitan") { throw "Unexpected vendor destination" }
     Get-ChildItem -LiteralPath $DestinationPath -Force | Remove-Item -Recurse -Force
     Copy-Item -Path (Join-Path $TempExtractPath "*") -Destination $DestinationPath -Recurse -Force
 
